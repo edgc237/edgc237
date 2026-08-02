@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon auto-évaluation — EDGC237</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--green:#0A5C0A;--gold:#F9C300;--navy:#0D1B2A;--red:#CE1126;}
+body{font-family:'DM Sans',sans-serif;background:#f7f5ef;color:var(--navy);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#fff;border-radius:16px;max-width:460px;width:100%;padding:32px 28px;box-shadow:0 12px 48px rgba(0,0,0,0.08);}
+.eyebrow{display:inline-block;background:rgba(10,92,10,0.08);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:14px;}
+h1{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;margin-bottom:8px;line-height:1.25;}
+.sub{color:rgba(13,27,42,0.55);font-size:0.87rem;margin-bottom:26px;line-height:1.6;}
+label{display:block;font-size:0.83rem;font-weight:700;margin-bottom:6px;margin-top:18px;}
+input[type=text],input[type=tel],select{width:100%;padding:12px 14px;border:1.5px solid rgba(13,27,42,0.15);border-radius:8px;font-family:inherit;font-size:0.9rem;color:var(--navy);}
+input[type=text]:focus,input[type=tel]:focus,select:focus{outline:none;border-color:var(--gold);}
+.slider-row{display:flex;align-items:center;gap:12px;}
+input[type=range]{flex:1;height:6px;border-radius:3px;background:rgba(13,27,42,0.12);appearance:none;}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:var(--green);cursor:pointer;}
+.slider-val{font-weight:800;color:var(--green);min-width:38px;text-align:right;}
+.checkbox-row{display:flex;align-items:center;gap:10px;margin-top:20px;}
+.checkbox-row input{width:18px;height:18px;}
+.checkbox-row label{margin:0;font-weight:600;}
+button{width:100%;background:var(--gold);color:var(--navy);border:none;padding:15px;border-radius:8px;font-weight:800;font-size:0.95rem;margin-top:26px;cursor:pointer;transition:background .2s;}
+button:hover{background:#e6b200;}
+button:disabled{opacity:0.6;cursor:not-allowed;}
+.link-btn{background:none;color:var(--green);font-weight:700;font-size:0.82rem;margin-top:12px;padding:0;text-decoration:underline;}
+.msg{margin-top:16px;font-size:0.85rem;padding:12px 14px;border-radius:8px;display:none;}
+.msg.error{display:block;background:rgba(206,17,38,0.08);color:var(--red);}
+.step{display:none;}
+.step.show{display:block;}
+.gauge{position:relative;width:150px;height:150px;margin:20px auto;}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg);}
+.gauge-bg{fill:none;stroke:rgba(13,27,42,0.08);stroke-width:10;}
+.gauge-fill{fill:none;stroke:var(--gold);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 0.6s ease;}
+.gauge-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--navy);}
+.palier{color:var(--green);font-weight:800;font-size:1.05rem;margin-bottom:6px;text-align:center;}
+.result-note{color:rgba(13,27,42,0.5);font-size:0.82rem;margin-top:12px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ÉTAPE 1 — Téléphone + nom -->
+  <div id="step1" class="step show">
+    <span class="eyebrow">🔐 Connexion sécurisée</span>
+    <h1>Reçois un code par SMS</h1>
+    <p class="sub">On vérifie ton numéro pour lier ta progression à ton profil — personne d'autre ne peut voir ton IPE.</p>
+    <label for="fullName">Ton nom complet</label>
+    <input type="text" id="fullName" placeholder="Ex : Marie Ngo Bell">
+    <label for="phone">Ton numéro WhatsApp</label>
+    <input type="tel" id="phone" placeholder="Ex : 675444463">
+    <button id="sendOtpBtn">Recevoir mon code</button>
+    <div class="msg error" id="step1Error"></div>
+  </div>
+
+  <!-- ÉTAPE 2 — Code OTP -->
+  <div id="step2" class="step">
+    <span class="eyebrow">🔐 Vérification</span>
+    <h1>Entre le code reçu</h1>
+    <p class="sub" id="otpSentTo">Un code à 6 chiffres a été envoyé par SMS.</p>
+    <label for="otpCode">Code de vérification</label>
+    <input type="text" id="otpCode" placeholder="123456" inputmode="numeric">
+    <button id="verifyOtpBtn">Vérifier</button>
+    <button type="button" class="link-btn" id="backToStep1">← Changer de numéro</button>
+    <div class="msg error" id="step2Error"></div>
+  </div>
+
+  <!-- ÉTAPE 3 — Formulaire d'auto-évaluation -->
+  <div id="step3" class="step">
+    <span class="eyebrow">🔧 Phase Fondation</span>
+    <h1>Comment s'est passée ta révision ?</h1>
+    <p class="sub">Deux minutes pour nous dire où tu en es.</p>
+
+    <label for="fasciculeId">Quel fascicule as-tu travaillé ?</label>
+    <select id="fasciculeId" required>
+      <option value="" disabled selected>Chargement…</option>
+    </select>
+
+    <label for="score">À ton avis, quel score aurais-tu au corrigé ? <span class="slider-val" id="scoreVal">70</span>/100</label>
+    <div class="slider-row"><input type="range" id="score" min="0" max="100" value="70"></div>
+
+    <label for="confidence">Tu te sens confiant sur ce chapitre ? <span class="slider-val" id="confVal">70</span>/100</label>
+    <div class="slider-row"><input type="range" id="confidence" min="0" max="100" value="70"></div>
+
+    <label for="timeMinutes">Temps passé (en minutes, optionnel)</label>
+    <input type="text" id="timeMinutes" placeholder="Ex : 45">
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="completed" checked>
+      <label for="completed">J'ai terminé et vérifié le corrigé</label>
+    </div>
+
+    <button id="submitBtn">Envoyer mon auto-évaluation</button>
+    <div class="msg error" id="step3Error"></div>
+  </div>
+
+  <!-- ÉTAPE 4 — Résultat -->
+  <div id="step4" class="step">
+    <span class="eyebrow">✅ Enregistré</span>
+    <h1 style="text-align:center;">Ton IPE actuel</h1>
+    <div class="gauge">
+      <svg viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" class="gauge-bg"></circle>
+        <circle cx="70" cy="70" r="60" class="gauge-fill" id="gaugeFill"></circle>
+      </svg>
+      <div class="gauge-num" id="gaugeNum">–</div>
+    </div>
+    <div class="palier" id="palierLabel"></div>
+    <p class="result-note" id="resultNote"></p>
+  </div>
+
+</div>
+
+<script>
+// ⚠️ À REMPLACER avant mise en production : ton URL et ta clé "anon" Supabase.
+// La clé "anon" est SANS RISQUE à exposer côté client — c'est fait pour,
+// contrairement à la clé "service_role" qui ne doit JAMAIS apparaître ici.
+const SUPABASE_URL = 'https://TON-PROJET.supabase.co';
+const SUPABASE_ANON_KEY = 'TON_ANON_KEY_ICI';
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(el => el.classList.remove('show'));
+  document.getElementById('step' + n).classList.add('show');
+}
+
+function normalizePhone(raw) {
+  let p = raw.trim().replace(/\s+/g, '');
+  if (p.startsWith('+')) return p;
+  if (p.startsWith('237')) return '+' + p;
+  if (p.startsWith('0')) p = p.slice(1);
+  return '+237' + p; // Cameroun par défaut
+}
+
+let currentPhone = '';
+let currentFullName = '';
+
+// ── ÉTAPE 1 → Envoyer le code OTP ──
+document.getElementById('sendOtpBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('sendOtpBtn');
+  const err = document.getElementById('step1Error');
+  err.style.display = 'none';
+
+  const fullName = document.getElementById('fullName').value.trim();
+  const phoneRaw = document.getElementById('phone').value.trim();
+
+  if (fullName.length < 2) { err.textContent = 'Entre ton nom complet.'; err.style.display = 'block'; return; }
+  if (!phoneRaw) { err.textContent = 'Entre ton numéro.'; err.style.display = 'block'; return; }
+
+  currentPhone = normalizePhone(phoneRaw);
+  currentFullName = fullName;
+
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+  try {
+    const { error } = await supabase.auth.signInWithOtp({
+      phone: currentPhone,
+      options: { data: { full_name: currentFullName } }
+    });
+    if (error) throw error;
+    document.getElementById('otpSentTo').textContent = 'Code envoyé au ' + currentPhone + '.';
+    showStep(2);
+  } catch (e) {
+    err.textContent = e.message || 'Erreur lors de l\'envoi du code.';
+    err.style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.textContent = 'Recevoir mon code';
+  }
+});
+
+document.getElementById('backToStep1').addEventListener('click', () => showStep(1));
+
+// ── ÉTAPE 2 → Vérifier le code ──
+document.getElementById('verifyOtpBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('verifyOtpBtn');
+  const err = document.getElementById('step2Error');
+  err.style.display = 'none';
+
+  const code = document.getElementById('otpCode').value.trim();
+  if (!code) { err.textContent = 'Entre le code reçu par SMS.'; err.style.display = 'block'; return; }
+
+  btn.disabled = true; btn.textContent = 'Vérification…';
+  try {
+    const { error } = await supabase.auth.verifyOtp({ phone: currentPhone, token: code, type: 'sms' });
+    if (error) throw error;
+    loadFascicules();
+    showStep(3);
+  } catch (e) {
+    err.textContent = e.message || 'Code invalide ou expiré.';
+    err.style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.textContent = 'Vérifier';
+  }
+});
+
+// ── Charger les fascicules (pré-sélection possible via ?fascicule=uuid) ──
+function loadFascicules() {
+  const select = document.getElementById('fasciculeId');
+  const params = new URLSearchParams(window.location.search);
+  const preselected = params.get('fascicule');
+  const titleParam = params.get('titre');
+  select.innerHTML = '';
+  const opt = document.createElement('option');
+  if (preselected) {
+    opt.value = preselected;
+    opt.textContent = titleParam ? decodeURIComponent(titleParam) : 'Fascicule sélectionné';
+  } else {
+    opt.value = '';
+    opt.textContent = 'Aucun fascicule pré-sélectionné — reviens via le lien WhatsApp';
+    opt.disabled = true;
+  }
+  opt.selected = true;
+  select.appendChild(opt);
+}
+
+// Sliders live
+const scoreEl = document.getElementById('score');
+scoreEl.addEventListener('input', () => document.getElementById('scoreVal').textContent = scoreEl.value);
+const confEl = document.getElementById('confidence');
+confEl.addEventListener('input', () => document.getElementById('confVal').textContent = confEl.value);
+
+// ── ÉTAPE 3 → Soumettre l'auto-évaluation ──
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('submitBtn');
+  const err = document.getElementById('step3Error');
+  err.style.display = 'none';
+
+  const fasciculeId = document.getElementById('fasciculeId').value;
+  const timeMinutes = document.getElementById('timeMinutes').value;
+
+  if (!fasciculeId) { err.textContent = 'Reviens via le lien WhatsApp du fascicule concerné.'; err.style.display = 'block'; return; }
+
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) throw new Error('Session expirée, reconnecte-toi.');
+
+    const attemptRes = await fetch('/api/attempt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + session.access_token },
+      body: JSON.stringify({
+        fasciculeId,
+        fullName: currentFullName,
+        score: Number(scoreEl.value),
+        completed: document.getElementById('completed').checked,
+        timeMinutes: timeMinutes ? Number(timeMinutes) : null,
+        confidence: Number(confEl.value),
+      })
+    });
+    const attemptData = await attemptRes.json();
+    if (!attemptRes.ok) throw new Error(attemptData.error || 'Erreur lors de l\'enregistrement');
+
+    const ipeRes = await fetch('/api/ipe', {
+      headers: { 'Authorization': 'Bearer ' + session.access_token }
+    });
+    const ipeData = await ipeRes.json();
+    if (!ipeRes.ok) throw new Error(ipeData.error || 'Erreur lors du calcul de l\'IPE');
+
+    showResult(ipeData);
+  } catch (e) {
+    err.textContent = e.message;
+    err.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Envoyer mon auto-évaluation';
+  }
+});
+
+function showResult(data) {
+  showStep(4);
+  const circumference = 2 * Math.PI * 60;
+  const gaugeFill = document.getElementById('gaugeFill');
+  gaugeFill.style.strokeDasharray = circumference;
+  gaugeFill.style.strokeDashoffset = circumference - (data.ipe / 100) * circumference;
+  document.getElementById('gaugeNum').textContent = data.ipe;
+  document.getElementById('palierLabel').textContent = data.palier;
+  document.getElementById('resultNote').textContent =
+    data.attemptsCount + ' tentative(s) enregistrée(s) au total. Continue régulièrement pour affiner ton IPE.';
+}
+</script>
+</body>
+</html>

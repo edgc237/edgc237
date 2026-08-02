@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSSC — Digital Secondary School of Cameroon | Powered by EDGC237</title>
+<meta name="description" content="DSSC : la plateforme premium de réussite scolaire d'EDGC237. Clubs Réussite, Prépas Examens, Bibliothèque Numérique, Classe Virtuelle, Orientation et Communauté — du 6ème à la Terminale.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://edgc237.vercel.app/dssc">
+<meta property="og:title" content="DSSC — Digital Secondary School of Cameroon">
+<meta property="og:description" content="La plateforme premium de réussite scolaire d'EDGC237.">
+<meta property="og:url" content="https://edgc237.vercel.app/dssc">
+<meta property="og:image" content="https://edgc237.vercel.app/og-image.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWRWQ6PNS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9BWRWQ6PNS');</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0D1B2A;overflow-x:hidden;}
+:root{--green:#0A5C0A;--green-dark:#073d07;--red:#CE1126;--gold:#F9C300;--gold-dark:#c9a000;--navy:#0D1B2A;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{position:sticky;top:0;width:100%;z-index:998;background:var(--navy);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 24px rgba(0,0,0,0.3);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:36px;width:auto;object-fit:contain;background:#fff;border-radius:6px;padding:3px 8px;}
+.nav-logo .edgc{color:rgba(255,255,255,0.5);font-size:0.75rem;font-weight:600;border-right:1px solid rgba(255,255,255,0.15);padding-right:12px;margin-right:4px;}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.75);font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);padding:9px 20px;border-radius:4px;font-weight:700;font-size:0.82rem;text-transform:uppercase;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--navy);padding:16px 0;z-index:997;box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:13px 24px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);transition:background .2s;}
+.mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--gold);}
+.mob-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;margin:12px 24px 4px;border-radius:4px;display:block;text-align:center;}
+@media(max-width:900px){.hamburger{display:flex;}.nav-links,.nav-cta{display:none;}}
+
+/* BREADCRUMB */
+.breadcrumb{background:#f0f7f0;padding:10px 32px;font-size:0.8rem;border-bottom:1px solid rgba(10,92,10,0.12);}
+.breadcrumb a{color:var(--green);font-weight:600;}
+.breadcrumb .sep{color:rgba(0,0,0,0.3);margin:0 6px;}
+.breadcrumb .here{color:var(--navy);font-weight:700;}
+
+/* HERO DSSC */
+.dssc-hero{background:linear-gradient(150deg,#071a07 0%,#0a2a0a 40%,#0D1B2A 100%);padding:64px 32px 56px;position:relative;overflow:hidden;}
+.dssc-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 55px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 55px);}
+.dssc-hero-inner{max-width:1140px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.dssc-hero-text{max-width:600px;}
+.dssc-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(249,195,0,0.1);border:1px solid rgba(249,195,0,0.25);border-radius:100px;padding:6px 16px;font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
+.dssc-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;}
+.dssc-hero h1 .gold{color:var(--gold);}
+.dssc-slogan{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:18px;}
+.dssc-hero p{color:rgba(255,255,255,0.72);font-size:0.98rem;line-height:1.75;margin-bottom:28px;}
+.dssc-hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 26px;border-radius:5px;font-weight:800;font-size:0.9rem;transition:all .2s;}
+.btn-gold:hover{background:#e6b200;transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.3);color:#fff;padding:14px 26px;border-radius:5px;font-weight:600;font-size:0.9rem;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.dssc-logo-wrap{flex-shrink:0;}
+.dssc-logo-wrap img{height:90px;width:auto;object-fit:contain;background:#fff;padding:8px 14px;border-radius:8px;background:#fff;border-radius:10px;padding:10px 18px;filter:drop-shadow(0 4px 24px rgba(249,195,0,0.2));}
+
+/* FUNNEL */
+.funnel{background:var(--navy);padding:20px 32px;border-top:2px solid rgba(249,195,0,0.2);}
+.funnel-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font-size:0.8rem;font-weight:600;}
+.f-step{color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.07);padding:7px 14px;border-radius:999px;}
+.f-step.active{background:rgba(249,195,0,0.15);color:var(--gold);border:1px solid rgba(249,195,0,0.3);}
+.f-arr{color:rgba(255,255,255,0.25);font-size:1rem;}
+
+/* BRANCHES GRID */
+.branches{padding:72px 32px;}
+.sec-label{display:inline-block;background:rgba(10,92,10,0.07);border:1px solid rgba(10,92,10,0.18);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--navy);margin-bottom:8px;}
+.sec-sub{color:rgba(13,27,42,0.55);font-size:0.95rem;margin-bottom:40px;max-width:600px;}
+.branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:960px){.branch-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.branch-grid{grid-template-columns:1fr;}}
+.branch-card{background:#fff;border:1px solid rgba(13,27,42,0.09);border-radius:12px;padding:28px 24px;transition:all .2s;display:flex;flex-direction:column;}
+.branch-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.09);}
+.branch-icon{font-size:2rem;margin-bottom:14px;}
+.branch-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:8px;}
+.branch-card p{color:rgba(13,27,42,0.6);font-size:0.87rem;line-height:1.65;flex:1;}
+.branch-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.branch-tag{font-size:0.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(10,92,10,0.07);color:var(--green);}
+.branch-tag.navy{background:rgba(13,27,42,0.07);color:var(--navy);}
+.branch-tag.gold{background:rgba(249,195,0,0.12);color:var(--gold-dark);}
+.branch-cta{display:inline-block;margin-top:18px;font-size:0.82rem;font-weight:700;color:var(--green);border-bottom:1px solid rgba(10,92,10,0.2);}
+.badge-soon{display:inline-block;font-size:0.7rem;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(26,77,143,0.08);color:#1A4D8F;margin-left:6px;vertical-align:middle;}
+
+/* CLUBS RÉUSSITE */
+.clubs{padding:0 32px 72px;}
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:960px){.plans-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.plans-grid{grid-template-columns:1fr;}}
+.plan-card{border:1px solid rgba(13,27,42,0.1);border-radius:12px;overflow:hidden;transition:all .2s;}
+.plan-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.1);}
+.plan-card.featured{border:2px solid var(--gold);}
+.plan-head{padding:22px 20px;background:var(--navy);text-align:center;position:relative;}
+.plan-head.g{background:linear-gradient(135deg,var(--green),#1a8c1a);}
+.plan-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--navy);font-size:0.65rem;font-weight:800;padding:3px 8px;border-radius:999px;}
+.plan-name{color:#fff;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;}
+.plan-price{color:var(--gold);font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;line-height:1;}
+.plan-currency{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:4px;}
+.plan-per{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:2px;}
+.plan-body{padding:20px;background:#fff;}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.plan-feats li{font-size:0.83rem;color:rgba(13,27,42,0.7);display:flex;gap:8px;align-items:flex-start;}
+.pf-dot{color:var(--green);font-weight:900;flex-shrink:0;}
+.plan-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:12px;border-radius:5px;font-weight:700;font-size:0.85rem;transition:all .2s;}
+.plan-cta:hover{background:var(--green-dark);}
+.plan-cta.gold-btn{background:var(--gold);color:var(--navy);}
+
+/* BIBLIO */
+.biblio{background:#f8f9fa;padding:72px 32px;}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:860px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.prod-grid{grid-template-columns:1fr;}}
+.prod-card{background:#fff;border:1px solid rgba(13,27,42,0.09);border-radius:10px;padding:22px;transition:all .2s;}
+.prod-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+.prod-card .price{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--green);margin-bottom:4px;}
+.prod-card h4{font-weight:700;font-size:0.95rem;margin-bottom:6px;}
+.prod-card p{font-size:0.82rem;color:var(--slate);line-height:1.55;}
+.prod-card .cta-link{display:inline-block;margin-top:12px;font-size:0.82rem;font-weight:700;color:var(--green);border-bottom:1px solid rgba(10,92,10,0.2);}
+
+/* CLASSE VIRTUELLE */
+.classe{padding:72px 32px;background:var(--navy);color:#fff;}
+.classe h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;color:#fff;margin-bottom:10px;}
+.classe .sec-sub{color:rgba(255,255,255,0.6);}
+.classe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px;}
+@media(max-width:700px){.classe-grid{grid-template-columns:1fr;}}
+.classe-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:24px;}
+.classe-card h4{color:var(--gold);font-size:1rem;font-weight:700;margin-bottom:8px;}
+.classe-card p{color:rgba(255,255,255,0.65);font-size:0.87rem;line-height:1.65;}
+
+/* ORIENTATION + COMMUNAUTE */
+.orient-comm{padding:72px 32px;background:#f0f7f0;}
+.oc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:700px){.oc-grid{grid-template-columns:1fr;}}
+.oc-card{background:#fff;border-radius:12px;padding:32px;border:1px solid rgba(10,92,10,0.12);}
+.oc-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;}
+.oc-card p{color:rgba(13,27,42,0.6);font-size:0.9rem;line-height:1.65;margin-bottom:18px;}
+
+/* FOOTER */
+footer{background:var(--green-dark,#073d07);border-top:4px solid var(--gold);padding:40px 32px;}
+.foot-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.foot-brand img{height:50px;width:auto;object-fit:contain;margin-bottom:10px;display:block;background:#fff;border-radius:8px;padding:6px 14px;}
+.foot-brand p{color:rgba(255,255,255,0.45);font-size:0.8rem;line-height:1.7;max-width:280px;}
+.foot-col h4{color:var(--gold);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.foot-col a{display:block;color:rgba(255,255,255,0.55);font-size:0.84rem;margin-bottom:8px;transition:color .2s;}
+.foot-col a:hover{color:var(--gold);}
+.foot-bottom{max-width:1140px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;color:rgba(255,255,255,0.3);font-size:0.75rem;flex-wrap:wrap;gap:8px;}
+.foot-bottom a{color:rgba(255,255,255,0.35);}
+.foot-bottom a:hover{color:var(--gold);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;box-shadow:0 4px 20px rgba(37,211,102,0.45);transition:all .25s;}
+.wa-float:hover{transform:translateY(-3px);}
+.wa-float svg{width:20px;height:20px;fill:#fff;}
+@media(max-width:700px){.wa-float span{display:none;}.wa-float{padding:13px;border-radius:50%;}}
+
+/* DIVIDER */
+.divider{height:4px;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=dssc&utm_medium=cta&utm_campaign=rejoindre" target="_blank" class="wa-float" aria-label="WhatsApp EDGC237">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Rejoindre</span>
+</a>
+
+<nav>
+  <div class="nav-logo">
+    <span class="edgc" style="color:#fff;font-weight:800;">EDGC237</span>
+    <img src="/dssc-logo.png" alt="DSSC — Digital Secondary School of Cameroon" style="height:36px;background:#fff;padding:4px 10px;border-radius:6px;">
+  </div>
+  <ul class="nav-links">
+    <li><a href="/">Accueil EDGC237</a></li>
+    <li><a href="/universite">🎓 Université</a></li>
+    <li><a href="#clubs" class="active">Clubs Réussite</a></li>
+    <li><a href="#prepas">Prépas Examens</a></li>
+    <li><a href="#biblio">Bibliothèque</a></li>
+    <li><a href="#classe">Classe Virtuelle</a></li>
+    <li><a href="#orientation">Orientation</a></li>
+    <li><a href="#communaute">Communauté</a></li>
+  </ul>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=dssc&utm_medium=cta" target="_blank" class="nav-cta">📲 Rejoindre</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/">🏠 Accueil EDGC237</a>
+  <a href="/universite">🎓 Université</a>
+  <a href="#clubs">⭐ Clubs Réussite</a>
+  <a href="#prepas">📚 Prépas Examens</a>
+  <a href="#biblio">📖 Bibliothèque</a>
+  <a href="#classe">🖥️ Classe Virtuelle</a>
+  <a href="#orientation">🧭 Orientation</a>
+  <a href="#communaute">👥 Communauté</a>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y" target="_blank" class="mob-cta">📲 Rejoindre la chaîne</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">EDGC237</a><span class="sep">/</span><span class="here">🎓 DSSC — Digital Secondary School of Cameroon</span>
+</div>
+
+<!-- HERO -->
+<section class="dssc-hero">
+  <div class="dssc-hero-inner">
+    <div class="dssc-hero-text">
+      <div class="dssc-eyebrow">🇨🇲 Powered by EDGC237</div>
+      <h1>La plateforme premium de <span class="gold">réussite scolaire</span> du Cameroun.</h1>
+      <div class="dssc-slogan">Learn · Prepare · Succeed</div>
+      <p>DSSC rassemble en un seul écosystème tout ce qu'il faut pour réussir au secondaire : clubs de suivi, préparations aux examens, bibliothèque numérique, classe virtuelle, orientation et communauté — du 6ème à la Terminale, 100% aligné MINESEC.</p>
+      <div class="dssc-hero-btns">
+        <a href="#clubs" class="btn-gold">⭐ Rejoindre un Club Réussite</a>
+        <a href="#biblio" class="btn-ghost">📖 Explorer la Bibliothèque</a>
+      </div>
+    </div>
+    <div class="dssc-logo-wrap">
+      <img src="/dssc-logo.png" alt="DSSC — Digital Secondary School of Cameroon" style="height:36px;background:#fff;padding:4px 10px;border-radius:6px;">
+    </div>
+  </div>
+</section>
+
+<!-- ENTONNOIR -->
+<div class="funnel">
+  <div class="funnel-inner">
+    <span class="f-step">Contenu gratuit</span><span class="f-arr">→</span>
+    <span class="f-step">Guide Premium</span><span class="f-arr">→</span>
+    <span class="f-step active">Club Réussite</span><span class="f-arr">→</span>
+    <span class="f-step">Classe Virtuelle</span><span class="f-arr">→</span>
+    <span class="f-step">Abonnement annuel DSSC</span>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- VUE D'ENSEMBLE DES 6 BRANCHES -->
+<section class="branches" id="accueil-dssc">
+  <div class="wrap">
+    <div class="sec-label">L'écosystème DSSC</div>
+    <h2 class="sec-title">Six branches. Un seul parcours de réussite.</h2>
+    <p class="sec-sub">Chaque branche est un espace dédié à une étape de ton parcours — pas une rubrique de plus, un produit complet.</p>
+    <div class="branch-grid">
+      <div class="branch-card">
+        <div class="branch-icon">⭐</div>
+        <h3>Clubs Réussite</h3>
+        <p>Abonnement annuel par niveau avec suivi hebdomadaire, corrigés exclusifs, séances intensives pré-examens et groupe WhatsApp dédié.</p>
+        <div class="branch-tags"><span class="branch-tag">3ème</span><span class="branch-tag">Première</span><span class="branch-tag">Terminale</span><span class="branch-tag">Enseignants</span></div>
+        <a href="#clubs" class="branch-cta">Voir les plans →</a>
+      </div>
+      <div class="branch-card">
+        <div class="branch-icon">📚</div>
+        <h3>Prépas Examens</h3>
+        <p>Guides premium, packs complets, tests blancs et corrections détaillées — structurés exactement comme les épreuves BEPC, Probatoire et BAC.</p>
+        <div class="branch-tags"><span class="branch-tag">BEPC</span><span class="branch-tag">Probatoire</span><span class="branch-tag">BAC</span></div>
+        <a href="#prepas" class="branch-cta">Voir les packs →</a>
+      </div>
+      <div class="branch-card">
+        <div class="branch-icon">📖</div>
+        <h3>Bibliothèque Numérique</h3>
+        <p>Tous les fascicules DÉMASQUER et fiches en accès immédiat : achat à l'unité (1 200 FCFA), pack niveau (3 500 FCFA) ou abonnement.</p>
+        <div class="branch-tags"><span class="branch-tag">PDF immédiat</span><span class="branch-tag">Achat unité</span><span class="branch-tag navy">Abonnement</span></div>
+        <a href="#biblio" class="branch-cta">Explorer →</a>
+      </div>
+      <div class="branch-card">
+        <div class="branch-icon">🖥️</div>
+        <h3>Classe Virtuelle <span class="badge-soon">En cours</span></h3>
+        <p>Coaching personnalisé, permanence pédagogique, lives thématiques et replays — un espace d'accompagnement en direct avec un enseignant expert.</p>
+        <div class="branch-tags"><span class="branch-tag navy">Coaching</span><span class="branch-tag navy">Lives</span><span class="branch-tag navy">Replays</span></div>
+        <a href="#classe" class="branch-cta">En savoir plus →</a>
+      </div>
+      <div class="branch-card">
+        <div class="branch-icon">🧭</div>
+        <h3>Orientation</h3>
+        <p>Filières, débouchés et conseils stratégiques pour choisir la bonne voie après le BEPC, le Probatoire ou le BAC — au Cameroun et à l'international.</p>
+        <div class="branch-tags"><span class="branch-tag gold">Post-BEPC</span><span class="branch-tag gold">Post-BAC</span></div>
+        <a href="#orientation" class="branch-cta">Découvrir →</a>
+      </div>
+      <div class="branch-card">
+        <div class="branch-icon">👥</div>
+        <h3>Communauté DSSC</h3>
+        <p>Chaînes WhatsApp par niveau, groupes de révision entre élèves, échanges avec les enseignants et accès aux ressources de la communauté.</p>
+        <div class="branch-tags"><span class="branch-tag">WhatsApp</span><span class="branch-tag">Entraide</span><span class="branch-tag navy">Gratuit</span></div>
+        <a href="#communaute" class="branch-cta">Rejoindre →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CLUBS RÉUSSITE -->
+<section class="clubs" id="clubs">
+  <div class="wrap">
+    <div style="padding-top:56px;">
+      <div class="sec-label">Clubs Réussite DSSC</div>
+      <h2 class="sec-title">L'abonnement qui transforme ta révision.</h2>
+      <p class="sec-sub">Chaque club est un groupe de suivi par niveau, avec du contenu exclusif chaque semaine et une correction personnalisée avant les examens.</p>
+      <div class="plans-grid">
+        <!-- 3ème -->
+        <div class="plan-card">
+          <div class="plan-head">
+            <div class="plan-name">Club Réussite 3ème</div>
+            <div class="plan-price">7 500</div>
+            <div class="plan-currency">FCFA</div>
+            <div class="plan-per">/ an</div>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-feats">
+              <li><span class="pf-dot">✓</span>GÉO · Histoire · ECM · Français · Anglais</li>
+              <li><span class="pf-dot">✓</span>Groupe WhatsApp dédié 3ème</li>
+              <li><span class="pf-dot">✓</span>Corrigés exclusifs hebdomadaires</li>
+              <li><span class="pf-dot">✓</span>Séance intensive pré-BEPC</li>
+              <li><span class="pf-dot">✓</span>1 correction de copie/trimestre</li>
+            </ul>
+            <a href="https://wa.me/237675444463?text=Je%20veux%20rejoindre%20le%20Club%20Réussite%203ème%20DSSC" target="_blank" class="plan-cta">S'inscrire →</a>
+          </div>
+        </div>
+        <!-- Première -->
+        <div class="plan-card featured">
+          <div class="plan-head g">
+            <div class="plan-badge">⭐ Populaire</div>
+            <div class="plan-name">Club Réussite 1ère</div>
+            <div class="plan-price">10 000</div>
+            <div class="plan-currency">FCFA</div>
+            <div class="plan-per">/ an</div>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-feats">
+              <li><span class="pf-dot">✓</span>GÉO · Histoire · ECM · Philo · FR · ANG</li>
+              <li><span class="pf-dot">✓</span>Groupe WhatsApp dédié 1ère</li>
+              <li><span class="pf-dot">✓</span>Corrigés exclusifs hebdomadaires</li>
+              <li><span class="pf-dot">✓</span>Séance intensive pré-Probatoire</li>
+              <li><span class="pf-dot">✓</span>2 corrections de copies/trimestre</li>
+            </ul>
+            <a href="https://wa.me/237675444463?text=Je%20veux%20rejoindre%20le%20Club%20Réussite%20Première%20DSSC" target="_blank" class="plan-cta gold-btn">S'inscrire →</a>
+          </div>
+        </div>
+        <!-- Terminale -->
+        <div class="plan-card">
+          <div class="plan-head">
+            <div class="plan-name">Club Réussite Terminale</div>
+            <div class="plan-price">12 000</div>
+            <div class="plan-currency">FCFA</div>
+            <div class="plan-per">/ an</div>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-feats">
+              <li><span class="pf-dot">✓</span>GÉO · Histoire · ECM · Philo · FR · ANG</li>
+              <li><span class="pf-dot">✓</span>Groupe WhatsApp dédié Terminale</li>
+              <li><span class="pf-dot">✓</span>Corrigés exclusifs + sujets probables BAC</li>
+              <li><span class="pf-dot">✓</span>Séances intensives pré-BAC (x3)</li>
+              <li><span class="pf-dot">✓</span>3 corrections de copies/trimestre</li>
+            </ul>
+            <a href="https://wa.me/237675444463?text=Je%20veux%20rejoindre%20le%20Club%20Réussite%20Terminale%20DSSC" target="_blank" class="plan-cta">S'inscrire →</a>
+          </div>
+        </div>
+        <!-- Enseignants -->
+        <div class="plan-card">
+          <div class="plan-head" style="background:linear-gradient(135deg,#0D1B2A,#1a3a5c);">
+            <div class="plan-name">Club Enseignants</div>
+            <div class="plan-price">10 000</div>
+            <div class="plan-currency">FCFA</div>
+            <div class="plan-per">/ an</div>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-feats">
+              <li><span class="pf-dot">✓</span>Fiches de leçons prêtes à l'emploi</li>
+              <li><span class="pf-dot">✓</span>Planches documentaires A3</li>
+              <li><span class="pf-dot">✓</span>Modèles d'évaluations + corrigés</li>
+              <li><span class="pf-dot">✓</span>Séquences et progressions annuelles</li>
+              <li><span class="pf-dot">✓</span>Groupe WhatsApp Enseignants PRO</li>
+            </ul>
+            <a href="https://wa.me/237675444463?text=Je%20veux%20rejoindre%20le%20Club%20Enseignants%20DSSC" target="_blank" class="plan-cta" style="background:#0D1B2A;">S'inscrire →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PRÉPAS EXAMENS -->
+<section style="padding:72px 32px;background:#f8f9fa;" id="prepas">
+  <div class="wrap">
+    <div class="sec-label">Prépas Examens DSSC</div>
+    <h2 class="sec-title">Guides, packs et corrections — structurés comme l'examen.</h2>
+    <p class="sec-sub">Chaque produit respecte la structure officielle : A.1 Savoirs, A.2 Savoir-faire, Partie B Agir Compétent — exactement comme le correcteur MINESEC l'attend.</p>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="price">1 200 FCFA</div>
+        <h4>Fascicule DÉMASQUER (unité)</h4>
+        <p>Un fascicule par matière et par niveau : GÉO BEPC, HISTOIRE BEPC, ECM BAC, GÉO PROBATOIRE…</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20commander%20un%20fascicule%20DÉMASQUER" target="_blank" class="cta-link">Commander →</a>
+      </div>
+      <div class="prod-card" style="border-color:var(--gold);">
+        <div class="price" style="color:var(--gold-dark);">3 500 FCFA</div>
+        <h4>Pack Niveau (GÉO + Hist + ECM)</h4>
+        <p>Pack complet par niveau : fiches, exercices types et corrigés pour toutes les matières du niveau choisi.</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20commander%20un%20Pack%20Niveau%20DSSC" target="_blank" class="cta-link">Commander →</a>
+      </div>
+      <div class="prod-card">
+        <div class="price">15 000 FCFA</div>
+        <h4>Pack Combo Tous Niveaux</h4>
+        <p>L'intégrale EDGC237 — tous les niveaux, toutes les matières disponibles. Économie de 6 000 FCFA.</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20commander%20le%20Pack%20Combo%20Tous%20Niveaux%20DSSC" target="_blank" class="cta-link">Commander →</a>
+      </div>
+      <div class="prod-card">
+        <div class="price" style="color:#1A4D8F;">Sur mesure</div>
+        <h4>Tests Blancs Officiels</h4>
+        <p>Épreuves blanches complètes pour le BEPC, Probatoire ou BAC, avec correction détaillée et barème.</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20commander%20des%20tests%20blancs%20DSSC" target="_blank" class="cta-link">Commander →</a>
+      </div>
+      <div class="prod-card">
+        <div class="price">500 FCFA</div>
+        <h4>Correction personnalisée de copie</h4>
+        <p>Soumets ta copie sur un sujet type et reçois une correction argumentée avec ton score estimé.</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20une%20correction%20de%20copie%20DSSC" target="_blank" class="cta-link">Commander →</a>
+      </div>
+      <div class="prod-card" style="background:var(--navy);border-color:var(--navy);">
+        <div class="price" style="color:var(--gold);">Certification</div>
+        <h4 style="color:#fff;">Formation Enseignants</h4>
+        <p style="color:rgba(255,255,255,0.65);">Certification en ingénierie pédagogique MINESEC — 15 000 FCFA/cohorte.</p>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20la%20formation%20Enseignants%20DSSC" target="_blank" class="cta-link" style="color:var(--gold);">S'inscrire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- BIBLIOTHÈQUE -->
+<section class="biblio" id="biblio">
+  <div class="wrap">
+    <div class="sec-label">Bibliothèque Numérique DSSC</div>
+    <h2 class="sec-title">Tous tes fascicules. Un clic. Livraison immédiate.</h2>
+    <p class="sec-sub">Téléchargement automatique immédiat via Chariow ⚡ — ou commande manuelle via WhatsApp 📲.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+      <div class="prod-card"><h4>📗 DÉMASQUER GÉO BEPC — 3ème</h4><p>49 pages · Exercices types BEPC · Corrigés détaillés</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_zvsmgk" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20GÉO%20BEPC%203ème" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📘 DÉMASQUER HISTOIRE BEPC — 3ème</h4><p>89 pages · Structure officielle MINESEC</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_vsxext" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20HISTOIRE%20BEPC%203ème" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📙 DÉMASQUER ECM BEPC — 3ème</h4><p>Éducation à la Citoyenneté · BEPC</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_h81tnl" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20ECM%20BEPC%203ème" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📗 DÉMASQUER GÉO PROBATOIRE — 1ère</h4><p>Probatoire toutes séries · Nouvelle édition</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_0jbin7l2" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20GÉO%20PROBATOIRE%201ère" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📘 DÉMASQUER HISTOIRE PROBATOIRE — 1ère</h4><p>Toutes séries Probatoire</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_aubbgt" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20HISTOIRE%20PROBATOIRE%201ère" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📙 DÉMASQUER ECM PROBATOIRE — 1ère</h4><p>ECM Probatoire toutes séries</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_hzxwlo" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20ECM%20PROBATOIRE%201ère" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📗 DÉMASQUER GÉO BAC — Terminale</h4><p>Géographie BAC toutes séries</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_bkyya3kt" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20GÉO%20BAC%20Terminale" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📘 DÉMASQUER HISTOIRE BAC — Terminale</h4><p>Histoire BAC toutes séries</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_7sdmhh" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20HISTOIRE%20BAC%20Terminale" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card"><h4>📙 DÉMASQUER ECM BAC — Terminale ESG</h4><p>53 pages · BAC séries ESG</p><div class="price">1 200 FCFA</div><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <a href="https://ytzldboj.mychariow.shop/prd_l2f6z0" target="_blank" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">⚡ Achat immédiat</a>
+        <a href="https://wa.me/237675444463?text=Je%20veux%20DÉMASQUER%20ECM%20BAC%20Terminale" target="_blank" style="flex:1;text-align:center;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);color:var(--green);padding:9px 10px;border-radius:5px;font-weight:700;font-size:0.78rem;min-width:100px;">📲 WhatsApp</a>
+      </div></div>
+      <div class="prod-card" style="border-color:var(--gold);"><h4>⭐ Pack Niveau 3ème — Prépa BEPC</h4><p>GÉO + Histoire + ECM · Économisez sur l'unité</p><div class="price" style="color:var(--gold-dark);">3 500 FCFA</div><a href="https://wa.me/237675444463?text=Je%20veux%20le%20Pack%20Niveau%203ème%20DSSC" target="_blank" class="cta-link" style="display:inline-block;margin-top:12px;">📲 Commander →</a></div>
+      <div class="prod-card" style="border-color:var(--gold);"><h4>⭐ Pack Niveau 1ère — Prépa Probatoire</h4><p>GÉO + Histoire + ECM</p><div class="price" style="color:var(--gold-dark);">3 500 FCFA</div><a href="https://wa.me/237675444463?text=Je%20veux%20le%20Pack%20Niveau%201ère%20DSSC" target="_blank" class="cta-link" style="display:inline-block;margin-top:12px;">📲 Commander →</a></div>
+      <div class="prod-card" style="border-color:var(--gold);"><h4>⭐ Pack Niveau Terminale — Prépa BAC</h4><p>GÉO + Histoire + ECM</p><div class="price" style="color:var(--gold-dark);">3 500 FCFA</div><a href="https://wa.me/237675444463?text=Je%20veux%20le%20Pack%20Niveau%20Terminale%20DSSC" target="_blank" class="cta-link" style="display:inline-block;margin-top:12px;">📲 Commander →</a></div>
+    </div>
+    <div style="margin-top:28px;padding:20px 24px;background:#fff;border-radius:10px;border:1px solid rgba(10,92,10,0.15);display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-weight:700;font-size:0.9rem;margin-bottom:4px;">💳 Paiement & livraison</div>
+        <div style="font-size:0.83rem;color:rgba(13,27,42,0.6);">MTN MoMo : +237 675 444 463 · Orange Money : +237 693 132 834 · Livraison PDF par WhatsApp en moins de 2h.</div>
+      </div>
+      <a href="https://wa.me/237675444463?text=Je%20veux%20commander%20dans%20la%20bibliothèque%20DSSC" target="_blank" style="background:var(--green);color:#fff;padding:12px 20px;border-radius:5px;font-weight:700;font-size:0.85rem;white-space:nowrap;">Commander par WhatsApp →</a>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CLASSE VIRTUELLE -->
+<section class="classe" id="classe">
+  <div class="wrap">
+    <div class="sec-label" style="background:rgba(249,195,0,0.1);border-color:rgba(249,195,0,0.22);color:var(--gold);">Classe Virtuelle DSSC</div>
+    <h2>Apprends avec un expert — en direct ou en différé.</h2>
+    <p class="sec-sub">L'accompagnement humain, à portée de téléphone.</p>
+    <div class="classe-grid">
+      <div class="classe-card">
+        <h4>🎯 Coaching personnalisé</h4>
+        <p>Sessions individuelles ou en petit groupe avec un enseignant expert. Objectifs ciblés : combler une lacune précise ou maîtriser une typologie d'exercice difficile.</p>
+      </div>
+      <div class="classe-card">
+        <h4>📋 Permanence pédagogique</h4>
+        <p>Des créneaux hebdomadaires pour poser tes questions et obtenir des réponses en direct. Pas de rendez-vous : tu arrives, tu poses, tu reçois ta réponse.</p>
+      </div>
+      <div class="classe-card">
+        <h4>📡 Lives thématiques</h4>
+        <p>Sessions live sur des thèmes de révision prioritaires, programmées en amont des examens. Annoncées dans la communauté WhatsApp avec accès gratuit pour les membres Club Réussite.</p>
+      </div>
+      <div class="classe-card">
+        <h4>🎬 Replays disponibles</h4>
+        <p>Toutes les sessions enregistrées et accessibles en replay pour les membres abonnés. Revisionne autant de fois que nécessaire.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px;text-align:center;">
+      <div style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:14px;">La Classe Virtuelle est en cours de déploiement — rejoins la liste d'attente pour être parmi les premiers.</div>
+      <a href="https://wa.me/237675444463?text=Je%20veux%20rejoindre%20la%20Classe%20Virtuelle%20DSSC" target="_blank" style="background:var(--gold);color:var(--navy);padding:13px 26px;border-radius:5px;font-weight:800;font-size:0.9rem;">📲 Rejoindre la liste d'attente →</a>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ORIENTATION + COMMUNAUTÉ -->
+<section class="orient-comm" id="orientation">
+  <div class="wrap">
+    <div class="oc-grid">
+      <div class="oc-card" id="orientation-card">
+        <div class="sec-label">Orientation DSSC</div>
+        <h3>Après l'examen, quelle route ?</h3>
+        <p>Filières disponibles, conditions d'accès, grandes écoles, universités, débouchés professionnels au Cameroun et à l'international — décortiqués simplement, sans jargon.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="font-size:0.87rem;color:rgba(13,27,42,0.7);">✅ Après le BEPC : séries, lycées, options</li>
+          <li style="font-size:0.87rem;color:rgba(13,27,42,0.7);">✅ Après le Probatoire : poursuites Terminale</li>
+          <li style="font-size:0.87rem;color:rgba(13,27,42,0.7);">✅ Après le BAC : grandes écoles, facs, masters</li>
+        </ul>
+        <a href="https://wa.me/237675444463?text=J'ai%20besoin%20d'un%20conseil%20orientation%20DSSC" target="_blank" style="display:inline-block;margin-top:18px;background:var(--green);color:#fff;padding:11px 20px;border-radius:5px;font-weight:700;font-size:0.85rem;">Demander un conseil →</a>
+      </div>
+      <div class="oc-card" id="communaute">
+        <div class="sec-label">Communauté DSSC</div>
+        <h3>Rejoins des milliers d'élèves qui réussissent ensemble.</h3>
+        <p>Les chaînes WhatsApp DSSC sont le point de ralliement de tous les élèves qui préparent leurs examens avec méthode. Contenu gratuit, entraide permanente, annonces en avant-première.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+          <a href="https://whatsapp.com/channel/0029Vb77v0xKgsNmVZkI9u1o" target="_blank" style="display:flex;align-items:center;gap:10px;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);border-radius:6px;padding:10px 14px;font-size:0.84rem;font-weight:600;color:var(--navy);">📗 Chaîne Élèves 3ème</a>
+          <a href="https://whatsapp.com/channel/0029VbC4EtZ6mYPOhsvUO91a" target="_blank" style="display:flex;align-items:center;gap:10px;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);border-radius:6px;padding:10px 14px;font-size:0.84rem;font-weight:600;color:var(--navy);">📘 Chaîne Élèves 1ère</a>
+          <a href="https://whatsapp.com/channel/0029VbCFHSJ0QeaiQLUvkk3r" target="_blank" style="display:flex;align-items:center;gap:10px;background:#f0f7f0;border:1px solid rgba(10,92,10,0.2);border-radius:6px;padding:10px 14px;font-size:0.84rem;font-weight:600;color:var(--navy);">📙 Chaîne Élèves Terminale</a>
+          <a href="https://whatsapp.com/channel/0029Vb80cGT0G0Xpzm06Ai2m" target="_blank" style="display:flex;align-items:center;gap:10px;background:#f8f0f0;border:1px solid rgba(13,27,42,0.15);border-radius:6px;padding:10px 14px;font-size:0.84rem;font-weight:600;color:var(--navy);">👨‍🏫 Chaîne Enseignants & Répétiteurs</a>
+          <a href="https://chat.whatsapp.com/CQaRrTm6kEmBMlFGH9hiNU" target="_blank" style="display:flex;align-items:center;gap:10px;background:#fff8e0;border:1px solid rgba(249,195,0,0.3);border-radius:6px;padding:10px 14px;font-size:0.84rem;font-weight:700;color:var(--navy);">⭐ Groupe Club Réussite (membres)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="/dssc-logo.png" alt="DSSC" style="background:#fff;padding:6px 14px;border-radius:6px;">
+      <p>Digital Secondary School of Cameroon — la plateforme premium de réussite scolaire d'EDGC237. Programme officiel MINESEC. Du 6ème à la Terminale.</p>
+    </div>
+    <div class="foot-col">
+      <h4>DSSC</h4>
+      <a href="#clubs">Clubs Réussite</a>
+      <a href="#prepas">Prépas Examens</a>
+      <a href="#biblio">Bibliothèque</a>
+      <a href="#classe">Classe Virtuelle</a>
+      <a href="#orientation">Orientation</a>
+      <a href="#communaute">Communauté</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact & Paiement</h4>
+      <a href="tel:+237675444463">MTN MoMo · +237 675 444 463</a>
+      <a href="tel:+237693132834">Orange Money · +237 693 132 834</a>
+      <a href="/">← Retour à l'accueil</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 DSSC — Powered by EDGC237 (École Digitale de Géographie du Cameroun). Tous droits réservés.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="/cgu">CGU</a>
+      <a href="/confidentialite">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobile-menu');
+  if(h&&m&&!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}
+});
+// Scroll animations
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
+document.querySelectorAll('.branch-card,.plan-card,.prod-card,.classe-card,.oc-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity 0.45s ease,transform 0.45s ease';obs.observe(el);});
+</script>
+</body>
+</html>

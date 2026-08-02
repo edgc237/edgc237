@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/logo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDGC237 — La plateforme premium de réussite scolaire du Cameroun</title>
+<meta name="description" content="EDGC237 & DSSC : la méthode exclusive pour réussir le BEPC, le Probatoire et le BAC. Fiches, fascicules DÉMASQUER, clubs réussite — 100% aligné MINESEC.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sylvin WANDJA NZOUATCHAM — EDGC237">
+<link rel="canonical" href="https://edgc237.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EDGC237 — La plateforme premium de réussite scolaire du Cameroun">
+<meta property="og:description" content="La méthode exclusive pour réussir le BEPC, le Probatoire et le BAC. 100% MINESEC.">
+<meta property="og:url" content="https://edgc237.vercel.app/">
+<meta property="og:image" content="https://edgc237.vercel.app/og-image.jpg">
+<meta property="og:site_name" content="EDGC237">
+<meta property="og:locale" content="fr_CM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EDGC237 — La plateforme premium de réussite scolaire du Cameroun">
+<meta name="twitter:image" content="https://edgc237.vercel.app/og-image.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"EDGC237 — École Digitale de Géographie du Cameroun","url":"https://edgc237.vercel.app","logo":"https://edgc237.vercel.app/logo.jpg","description":"Plateforme pédagogique camerounaise de préparation au BEPC, Probatoire et BAC.","founder":{"@type":"Person","name":"Sylvin WANDJA NZOUATCHAM","jobTitle":"Docteur en Géographie"},"contactPoint":{"@type":"ContactPoint","telephone":"+237-675-444-463","contactType":"customer service"}}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWRWQ6PNS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9BWRWQ6PNS');</script>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0D1B2A;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+:root{--green:#0A5C0A;--green-dark:#073d07;--green-mid:#0e7a0e;--red:#CE1126;--gold:#F9C300;--gold-dark:#c9a000;--navy:#0D1B2A;--cream:#F7F7F5;}
+a{text-decoration:none;color:inherit;}
+
+/* ═══════════════════════════════
+   HERO PREMIUM
+═══════════════════════════════ */
+.hero{
+  background:var(--navy);
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:100px 40px 80px;
+  position:relative;overflow:hidden;
+}
+/* grille de fond discrète façon Linear */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(249,195,0,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(249,195,0,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+}
+/* glow vert en bas-gauche */
+.hero::after{
+  content:'';position:absolute;
+  bottom:-120px;left:-80px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(10,92,10,0.35),transparent 65%);
+  pointer-events:none;
+}
+/* glow or en haut-droite */
+.hero-glow-gold{
+  position:absolute;top:-80px;right:-80px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(249,195,0,0.12),transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 480px;
+  gap:64px;align-items:center;
+  position:relative;z-index:1;
+}
+@media(max-width:980px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.hero{min-height:auto;padding:100px 24px 64px;}}
+
+/* Badge animé */
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(249,195,0,0.08);
+  border:1px solid rgba(249,195,0,0.2);
+  border-radius:100px;padding:7px 18px;
+  font-size:0.72rem;font-weight:700;
+  color:var(--gold);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:28px;
+}
+.hero-badge-dot{
+  width:6px;height:6px;
+  background:var(--gold);border-radius:50%;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+
+/* Titre hero — signature typographique */
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,5vw,3.8rem);
+  font-weight:900;color:#fff;
+  line-height:1.08;letter-spacing:-0.02em;
+  margin-bottom:20px;max-width:14ch;
+}
+.hero h1 .accent{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--gold);
+  font-style:italic;
+}
+.hero h1 .solid{color:var(--gold);}
+
+.hero-sub{
+  color:rgba(255,255,255,0.6);
+  font-size:1.05rem;line-height:1.75;
+  max-width:44ch;margin-bottom:36px;
+}
+
+/* Boutons */
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.btn-primary{
+  background:var(--gold);color:var(--navy);
+  padding:15px 30px;border-radius:6px;
+  font-weight:800;font-size:0.92rem;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;letter-spacing:0.01em;
+}
+.btn-primary:hover{background:#e6b200;transform:translateY(-2px);box-shadow:0 8px 28px rgba(249,195,0,0.4);}
+.btn-secondary{
+  border:1.5px solid rgba(255,255,255,0.2);color:#fff;
+  padding:15px 30px;border-radius:6px;
+  font-weight:600;font-size:0.92rem;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+/* Stats en ligne */
+.hero-stats{
+  display:flex;gap:0;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;overflow:hidden;
+  max-width:480px;
+}
+.h-stat{
+  flex:1;padding:18px 14px;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+}
+.h-stat:last-child{border-right:none;}
+.h-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:900;color:var(--gold);
+  line-height:1;display:block;
+}
+.h-lbl{font-size:0.68rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;display:block;}
+
+/* Carte hero droite — écosystème visuel */
+.hero-right{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;padding:32px;
+  backdrop-filter:blur(20px);
+}
+.hero-logo-block{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:28px;padding-bottom:24px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.hero-logo-block img{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);}
+.hero-logo-block .hl-name{font-family:'Playfair Display',serif;color:#fff;font-weight:900;font-size:1.1rem;}
+.hero-logo-block .hl-sub{color:rgba(255,255,255,0.4);font-size:0.72rem;}
+.dssc-badge-card{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(249,195,0,0.08);
+  border:1px solid rgba(249,195,0,0.2);
+  border-radius:10px;padding:14px;
+  margin-bottom:14px;
+}
+.dssc-badge-card img{height:36px;background:#fff;padding:4px 8px;border-radius:6px;}
+.dssc-badge-card .db-text .db-name{color:var(--gold);font-weight:800;font-size:0.85rem;}
+.dssc-badge-card .db-text .db-sub{color:rgba(255,255,255,0.4);font-size:0.72rem;}
+.module-list{display:flex;flex-direction:column;gap:8px;}
+.mod-item{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.03);
+  border-radius:8px;padding:10px 12px;
+  border:1px solid rgba(255,255,255,0.06);
+  transition:border-color .2s;
+}
+.mod-item:hover{border-color:rgba(249,195,0,0.2);}
+.mod-item .mi-icon{font-size:1rem;flex-shrink:0;}
+.mod-item .mi-name{color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;flex:1;}
+.mod-item .mi-tag{
+  font-size:0.65rem;font-weight:700;
+  padding:3px 8px;border-radius:100px;
+  background:rgba(10,92,10,0.2);color:#5fce5f;
+}
+.mod-item .mi-tag.gold{background:rgba(249,195,0,0.12);color:var(--gold);}
+
+/* ═══════════════════════════════
+   TRUST BAR
+═══════════════════════════════ */
+.trust-bar{
+  background:var(--green-dark);
+  border-top:1px solid rgba(249,195,0,0.15);
+  border-bottom:1px solid rgba(249,195,0,0.15);
+  padding:14px 40px;
+}
+.trust-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;flex-wrap:wrap;
+  font-size:0.78rem;font-weight:600;
+  color:rgba(255,255,255,0.65);
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+.trust-item{display:flex;align-items:center;gap:8px;}
+.trust-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+/* ═══════════════════════════════
+   SECTION POURQUOI — cartes icônes premium
+═══════════════════════════════ */
+.why{padding:100px 40px;background:#fff;}
+.why .wrap{max-width:1140px;margin:0 auto;}
+.sec-head{margin-bottom:64px;}
+.sec-eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;font-weight:500;
+  color:var(--green);letter-spacing:0.15em;
+  text-transform:uppercase;margin-bottom:12px;display:block;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:900;color:var(--navy);
+  line-height:1.12;margin-bottom:12px;
+}
+.sec-sub{color:rgba(13,27,42,0.5);font-size:1rem;line-height:1.75;max-width:52ch;}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.why-grid{grid-template-columns:1fr;}}
+.why-card{
+  padding:28px 24px;
+  border:1px solid rgba(13,27,42,0.07);
+  border-radius:14px;
+  background:#fff;
+  transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.why-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green),var(--gold));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08);border-color:transparent;}
+.why-card:hover::before{transform:scaleX(1);}
+.why-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:18px;
+  background:rgba(10,92,10,0.07);
+}
+.why-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--navy);}
+.why-card p{font-size:0.85rem;color:rgba(13,27,42,0.55);line-height:1.65;}
+
+/* ═══════════════════════════════
+   MÉTHODE EDGC237 — TIMELINE SIGNATURE
+═══════════════════════════════ */
+.methode{
+  padding:100px 40px;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+.methode::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 100%,rgba(10,92,10,0.3),transparent 60%);
+  pointer-events:none;
+}
+.methode .wrap{max-width:1140px;margin:0 auto;position:relative;z-index:1;}
+.methode .sec-eyebrow{color:var(--gold);}
+.methode .sec-title{color:#fff;}
+.methode .sec-sub{color:rgba(255,255,255,0.5);}
+
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  margin-top:64px;
+  position:relative;
+}
+/* ligne de connexion */
+.timeline::before{
+  content:'';position:absolute;
+  top:56px;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(249,195,0,0.3),rgba(249,195,0,0.6),rgba(249,195,0,0.3),transparent);
+}
+@media(max-width:800px){
+  .timeline{grid-template-columns:1fr;gap:24px;}
+  .timeline::before{display:none;}
+}
+.tl-step{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:0 16px;
+  position:relative;
+}
+.tl-num{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.65rem;font-weight:500;
+  color:rgba(249,195,0,0.5);
+  letter-spacing:0.1em;margin-bottom:12px;
+}
+.tl-circle{
+  width:56px;height:56px;border-radius:50%;
+  border:2px solid rgba(249,195,0,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:24px;
+  background:rgba(249,195,0,0.06);
+  position:relative;z-index:1;
+  transition:all .3s;
+}
+.tl-step:hover .tl-circle{
+  border-color:var(--gold);
+  background:rgba(249,195,0,0.12);
+  transform:scale(1.1);
+}
+.tl-title{
+  font-family:'Playfair Display',serif;
+  font-weight:900;font-size:1rem;
+  color:#fff;margin-bottom:8px;
+}
+.tl-desc{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.65;}
+
+/* ═══════════════════════════════
+   PUBLICS — 3 espaces élève/parent/enseignant
+═══════════════════════════════ */
+.publics{padding:100px 40px;background:var(--cream);}
+.publics .wrap{max-width:1140px;margin:0 auto;}
+.pub-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:56px;
+}
+@media(max-width:860px){.pub-grid{grid-template-columns:1fr;}}
+.pub-card{
+  border-radius:18px;overflow:hidden;
+  border:1px solid rgba(13,27,42,0.07);
+  background:#fff;
+  transition:all .25s;
+}
+.pub-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1);}
+.pub-card-header{
+  padding:32px 28px 28px;
+  position:relative;
+}
+.pub-card-header.eleve{background:linear-gradient(135deg,#073d07,#0e5c0e);}
+.pub-card-header.parent{background:linear-gradient(135deg,var(--navy),#1a3a5c);}
+.pub-card-header.enseignant{background:linear-gradient(135deg,#4a0a0a,#8b0000);}
+.pub-emoji{font-size:2.4rem;margin-bottom:14px;display:block;}
+.pub-card-header h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:6px;
+}
+.pub-card-header p{color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.6;}
+.pub-card-body{padding:24px 28px;}
+.pub-feats{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.pub-feats li{
+  display:flex;align-items:center;gap:10px;
+  font-size:0.87rem;color:rgba(13,27,42,0.7);
+}
+.pub-feats li::before{content:'→';color:var(--green);font-weight:800;flex-shrink:0;}
+.pub-cta{
+  display:block;margin:20px 28px 24px;
+  background:var(--cream);border:1.5px solid rgba(13,27,42,0.1);
+  padding:12px;border-radius:8px;
+  text-align:center;font-weight:700;font-size:0.85rem;
+  color:var(--navy);transition:all .2s;
+}
+.pub-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+
+/* ═══════════════════════════════
+   DSSC PROMO BAND
+═══════════════════════════════ */
+.dssc-band{
+  background:linear-gradient(90deg,var(--green-dark) 0%,#0a2a0a 50%,var(--green-dark) 100%);
+  border-top:3px solid var(--gold);
+  border-bottom:3px solid var(--gold);
+  padding:48px 40px;
+}
+.dssc-band-inner{
+  max-width:1140px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.dssc-band-text .eyebrow{
+  font-size:0.7rem;font-weight:700;
+  color:rgba(249,195,0,0.6);letter-spacing:0.15em;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.dssc-band-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-weight:900;color:#fff;margin-bottom:8px;
+}
+.dssc-band-text p{color:rgba(255,255,255,0.55);font-size:0.9rem;max-width:48ch;}
+.dssc-band img{
+  height:72px;background:#fff;
+  padding:8px 16px;border-radius:8px;
+  flex-shrink:0;
+}
+.dssc-band-cta{
+  background:var(--gold);color:var(--navy);
+  padding:16px 30px;border-radius:6px;
+  font-weight:800;font-size:0.92rem;
+  white-space:nowrap;transition:all .2s;
+  flex-shrink:0;
+}
+.dssc-band-cta:hover{background:#e6b200;transform:translateY(-2px);}
+
+/* ═══════════════════════════════
+   TÉMOIGNAGES
+═══════════════════════════════ */
+.temoignages{padding:100px 40px;background:#fff;}
+.temoignages .wrap{max-width:1140px;margin:0 auto;}
+.temo-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:56px;
+}
+@media(max-width:860px){.temo-grid{grid-template-columns:1fr;}}
+.temo-card{
+  padding:32px;border-radius:14px;
+  border:1px solid rgba(13,27,42,0.07);
+  background:#fff;
+  transition:all .25s;
+}
+.temo-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.07);transform:translateY(-2px);}
+.stars{color:var(--gold);font-size:0.9rem;margin-bottom:16px;letter-spacing:2px;}
+.temo-card blockquote{
+  font-size:0.92rem;line-height:1.75;
+  color:rgba(13,27,42,0.7);
+  font-style:italic;margin-bottom:20px;
+}
+.temo-author{display:flex;align-items:center;gap:12px;}
+.temo-avatar{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+  background:var(--cream);
+}
+.temo-name{font-weight:700;font-size:0.88rem;color:var(--navy);}
+.temo-role{font-size:0.75rem;color:rgba(13,27,42,0.4);}
+
+/* ═══════════════════════════════
+   FAQ
+═══════════════════════════════ */
+.faq{padding:100px 40px;background:var(--cream);}
+.faq .wrap{max-width:780px;margin:0 auto;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid rgba(13,27,42,0.08);}
+.faq-q{
+  width:100%;padding:22px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;cursor:pointer;background:none;border:none;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.98rem;font-weight:700;color:var(--navy);
+  text-align:left;
+}
+.faq-q::after{
+  content:'+';font-size:1.4rem;color:var(--green);
+  flex-shrink:0;transition:transform .2s;
+}
+.faq-q.open::after{transform:rotate(45deg);}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease;
+}
+.faq-a.open{max-height:400px;}
+.faq-a p{
+  padding:0 0 22px;
+  color:rgba(13,27,42,0.6);
+  font-size:0.92rem;line-height:1.75;
+}
+
+/* ═══════════════════════════════
+   CTA FINAL
+═══════════════════════════════ */
+.cta-final{
+  padding:100px 40px;
+  background:var(--navy);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-final::before{
+  content:'';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  width:800px;height:800px;
+  background:radial-gradient(circle,rgba(10,92,10,0.25),transparent 60%);
+  pointer-events:none;
+}
+.cta-final .wrap{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+.cta-final h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:900;color:#fff;
+  line-height:1.12;margin-bottom:16px;
+}
+.cta-final h2 em{color:var(--gold);font-style:normal;}
+.cta-final p{color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.75;margin-bottom:36px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+footer{
+  background:var(--green-dark);
+  border-top:4px solid var(--gold);
+  padding:60px 40px 28px;
+}
+.footer-inner{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;
+  gap:48px;margin-bottom:40px;
+}
+@media(max-width:780px){.footer-inner{grid-template-columns:1fr;gap:32px;}}
+.footer-brand img{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);margin-bottom:14px;display:block;}
+.footer-brand-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold);font-weight:700;margin-bottom:8px;}
+.footer-brand p{color:rgba(255,255,255,0.4);font-size:0.82rem;line-height:1.75;max-width:32ch;}
+.footer-col h4{color:var(--gold);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.footer-col a{display:block;color:rgba(255,255,255,0.5);font-size:0.84rem;margin-bottom:10px;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{
+  max-width:1140px;margin:0 auto;
+  padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+  color:rgba(255,255,255,0.25);font-size:0.75rem;
+}
+.footer-bottom a{color:rgba(255,255,255,0.3);}
+.footer-bottom a:hover{color:var(--gold);}
+
+/* ═══════════════════════════════
+   ANIMATIONS AU SCROLL
+═══════════════════════════════ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ═══════════════════════════════
+   RESPONSIVE COMMUN
+═══════════════════════════════ */
+@media(max-width:900px){
+  .why,.methode,.publics,.temoignages,.faq,.cta-final{padding:72px 24px;}
+  .trust-bar{padding:12px 24px;}
+  .dssc-band{padding:36px 24px;}
+  .dssc-band-inner{justify-content:center;text-align:center;}
+  .dssc-band img{display:none;}
+  footer{padding:48px 24px 24px;}
+}
+@media(max-width:520px){
+  .hero-stats{flex-direction:column;}
+  .hero-btns{flex-direction:column;}
+  .btn-primary,.btn-secondary{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=edgc237site&utm_medium=float&utm_campaign=organic" target="_blank" class="wa-float" aria-label="Rejoindre sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Rejoindre</span>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="logo.jpg" alt="EDGC237">
+    <span class="nav-brand" style="color:var(--gold);">EDGC237</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#pourquoi">Pourquoi EDGC237</a></li>
+    <li><a href="#methode">La Méthode</a></li>
+    <li><a href="#publics">Espace élève</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/dssc" style="color:var(--gold);font-weight:700;">🎓 DSSC</a></li>
+    <li><a href="/universite" style="color:var(--gold);font-weight:700;">🎓 Université</a></li>
+  </ul>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=edgc237site&utm_medium=cta&utm_campaign=organic" target="_blank" class="nav-cta">📲 Commencer</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#pourquoi">Pourquoi EDGC237</a>
+  <a href="#methode">La Méthode</a>
+  <a href="#publics">Espace élève</a>
+  <a href="#faq">FAQ</a>
+  <a href="/dssc" style="color:var(--gold);font-weight:700;">🎓 DSSC — Plateforme premium</a>
+  <a href="/universite" style="color:var(--gold);font-weight:700;">🎓 Université — Licence, Master, Recherche</a>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y" target="_blank" class="mobile-menu-cta">📲 Commencer gratuitement</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow-gold"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-hook">🧠 La première plateforme d'intelligence de l'apprentissage au service de la réussite scolaire au Cameroun</div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Programme officiel MINESEC — Cameroun 🇨🇲
+      </div>
+      <h1>Chaque révision devient une <span class="accent">progression</span> <span class="solid">mesurable</span>.</h1>
+      <p class="hero-sub">BEPC, Probatoire ou BAC — la méthode EDGC237 transforme vos révisions en compétences prouvées, de la 6ème en Terminale.</p>
+      <div class="hero-btns">
+        <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=edgc237site&utm_medium=hero&utm_campaign=organic" target="_blank" class="btn-primary">📲 Commencer gratuitement</a>
+        <a href="#methode" class="btn-secondary">Découvrir la méthode →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><span class="h-num">6</span><span class="h-lbl">Matières</span></div>
+        <div class="h-stat"><span class="h-num">6→Tle</span><span class="h-lbl">Niveaux</span></div>
+        <div class="h-stat"><span class="h-num">100%</span><span class="h-lbl">MINESEC</span></div>
+        <div class="h-stat"><span class="h-num">3/sem</span><span class="h-lbl">Contenus</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-logo-block">
+        <img src="logo.jpg" alt="EDGC237">
+        <div>
+          <div class="hl-name">EDGC237</div>
+          <div class="hl-sub">École Digitale de Géographie du Cameroun</div>
+        </div>
+      </div>
+      <div class="dssc-badge-card">
+        <img src="dssc-logo.png" alt="DSSC">
+        <div class="db-text">
+          <div class="db-name">DSSC — Produit phare</div>
+          <div class="db-sub">Digital Secondary School of Cameroon</div>
+        </div>
+      </div>
+      <div class="module-list">
+        <div class="mod-item"><span class="mi-icon">⭐</span><span class="mi-name">Clubs Réussite</span><span class="mi-tag">Actif</span></div>
+        <div class="mod-item"><span class="mi-icon">📚</span><span class="mi-name">Prépas Examens</span><span class="mi-tag">Actif</span></div>
+        <div class="mod-item"><span class="mi-icon">📖</span><span class="mi-name">Bibliothèque Numérique</span><span class="mi-tag">Actif</span></div>
+        <div class="mod-item"><span class="mi-icon">🖥️</span><span class="mi-name">Classe Virtuelle</span><span class="mi-tag gold">Bientôt</span></div>
+        <div class="mod-item"><span class="mi-icon">🧭</span><span class="mi-name">Orientation</span><span class="mi-tag">Actif</span></div>
+        <div class="mod-item"><span class="mi-icon">👥</span><span class="mi-name">Communauté</span><span class="mi-tag">Actif</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-item"><span class="trust-dot"></span>100% conforme MINESEC</span>
+    <span class="trust-item"><span class="trust-dot"></span>Enseignant-chercheur</span>
+    <span class="trust-item"><span class="trust-dot"></span>Dr. Sylvin WANDJA NZOUATCHAM</span>
+    <span class="trust-item"><span class="trust-dot"></span>6 matières disponibles</span>
+    <span class="trust-item"><span class="trust-dot"></span>Livraison WhatsApp</span>
+  </div>
+</div>
+
+<!-- POURQUOI EDGC237 -->
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Pourquoi EDGC237 ?</span>
+      <h2 class="sec-title">La méthode qui fait la différence<br>entre réussir et repasser.</h2>
+      <p class="sec-sub">Pas un simple recueil de fiches. Un écosystème complet, conçu par un enseignant-chercheur qui connaît chaque virgule des attentes MINESEC.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">✅</div>
+        <h3>100 % conforme MINESEC</h3>
+        <p>Chaque ressource est calée sur les arrêtés officiels. Pas de contenu hors programme qui fait perdre du temps.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🎓</div>
+        <h3>Enseignant-chercheur</h3>
+        <p>Créé et validé par le Dr. WANDJA NZOUATCHAM, Docteur en Géographie, enseignant au secondaire.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📲</div>
+        <h3>Livraison WhatsApp</h3>
+        <p>3 contenus par semaine, directement sur ton téléphone. Pas d'application à installer, pas de connexion stable requise.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📝</div>
+        <h3>Exercices corrigés</h3>
+        <p>Chaque exercice est structuré exactement comme l'épreuve officielle : A.1 Savoirs, A.2 Savoir-faire, Partie B.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🎯</div>
+        <h3>Préparation ciblée</h3>
+        <p>BEPC, Probatoire, BAC — chaque niveau a sa stratégie, ses pièges identifiés et ses méthodes de réponse.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🧭</div>
+        <h3>Orientation scolaire</h3>
+        <p>Filières, débouchés, grandes écoles — tu prépares l'examen et tu sais déjà ce que tu feras après.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📊</div>
+        <h3>Suivi intelligent</h3>
+        <p>Clubs Réussite avec correction de copies, retours personnalisés et séances intensives pré-examens.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🌐</div>
+        <h3>Écosystème complet</h3>
+        <p>DSSC réunit en un seul endroit tout ce qu'il faut : cours, exercices, communauté, bibliothèque, classe virtuelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LA MÉTHODE EDGC237 — TIMELINE -->
+<section class="methode" id="methode">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <span class="sec-eyebrow">La Méthode EDGC237</span>
+      <h2 class="sec-title" style="color:#fff;">Cinq étapes. Une seule destination.</h2>
+      <p class="sec-sub">Du cours à la réussite — chaque étape est outillée, chaque transition est guidée.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-num">01</div>
+        <div class="tl-circle">🧠</div>
+        <div class="tl-title">Comprendre</div>
+        <div class="tl-desc">La notion expliquée simplement, ancrée dans le programme MINESEC.</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">02</div>
+        <div class="tl-circle">📌</div>
+        <div class="tl-title">Mémoriser</div>
+        <div class="tl-desc">Fiches synthèse, schémas et repères chronologiques pour fixer l'essentiel.</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">03</div>
+        <div class="tl-circle">✏️</div>
+        <div class="tl-title">S'entraîner</div>
+        <div class="tl-desc">Exercices types à la structure exacte de l'épreuve officielle.</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">04</div>
+        <div class="tl-circle">📋</div>
+        <div class="tl-title">Être évalué</div>
+        <div class="tl-desc">Correction détaillée avec barème et retour personnalisé.</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">05</div>
+        <div class="tl-circle">🏆</div>
+        <div class="tl-title">Réussir</div>
+        <div class="tl-desc">BEPC, Probatoire ou BAC — tu arrives préparé, pas surpris.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CE QUI NOUS DIFFÉRENCIE — IPE -->
+<section class="ipe-section" id="difference">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:680px;margin:0 auto 40px;">
+      <span class="sec-eyebrow">Ce qui nous différencie</span>
+      <h2 class="sec-title" style="color:#fff;">La différence ne se voit pas dans le contenu.<br>Elle se voit dans la progression.</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,0.65);">N'importe qui peut produire un PDF de révision. Ce qui est rare, c'est de savoir où en est réellement un élève. C'est exactement ce que mesure l'Indice de Progression EDGC (IPE) — essayez-le ci-dessous.</p>
+    </div>
+
+    <div class="ipe-widget reveal">
+      <div class="ipe-widget-head">
+        <span class="ipe-tag">🔧 Simulateur — Phase Fondation 2026-2027</span>
+        <p>Déplacez les curseurs pour simuler votre profil de révision et voir votre IPE se calculer en direct.</p>
+      </div>
+      <div class="ipe-controls">
+        <div class="ipe-control">
+          <label for="ipeScore">Score moyen aux auto-évaluations <span id="ipeScoreVal">70</span>/100</label>
+          <input type="range" id="ipeScore" min="0" max="100" value="70">
+        </div>
+        <div class="ipe-control">
+          <label for="ipeCompletion">Taux de complétion des fascicules <span id="ipeCompletionVal">70</span>%</label>
+          <input type="range" id="ipeCompletion" min="0" max="100" value="70">
+        </div>
+        <div class="ipe-control">
+          <label for="ipeRegularite">Régularité (semaines actives / 4) <span id="ipeRegulariteVal">70</span>%</label>
+          <input type="range" id="ipeRegularite" min="0" max="100" value="70">
+        </div>
+      </div>
+      <div class="ipe-result">
+        <div class="ipe-gauge">
+          <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" class="ipe-gauge-bg"></circle>
+            <circle cx="70" cy="70" r="60" class="ipe-gauge-fill" id="ipeGaugeFill"></circle>
+          </svg>
+          <div class="ipe-gauge-num"><span id="ipeScoreNum">70</span></div>
+        </div>
+        <div class="ipe-palier" id="ipePalier">Maîtrise en cours</div>
+        <div class="ipe-formula">IPE = (Score × 0,5) + (Complétion × 0,3) + (Régularité × 0,2)</div>
+      </div>
+    </div>
+    <p class="ipe-note reveal">Formule en cours de validation sur nos premiers élèves pilotes. Les premiers résultats réels seront partagés dès qu'ils seront disponibles.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  const score = document.getElementById('ipeScore');
+  const completion = document.getElementById('ipeCompletion');
+  const regularite = document.getElementById('ipeRegularite');
+  const scoreVal = document.getElementById('ipeScoreVal');
+  const completionVal = document.getElementById('ipeCompletionVal');
+  const regulariteVal = document.getElementById('ipeRegulariteVal');
+  const gaugeFill = document.getElementById('ipeGaugeFill');
+  const scoreNum = document.getElementById('ipeScoreNum');
+  const palier = document.getElementById('ipePalier');
+  const circumference = 2 * Math.PI * 60;
+
+  function paliers(v){
+    if(v < 40) return 'Démarrage';
+    if(v < 65) return 'En progression';
+    if(v < 85) return 'Maîtrise en cours';
+    return 'Compétence validée';
+  }
+
+  function update(){
+    const s = parseInt(score.value), c = parseInt(completion.value), r = parseInt(regularite.value);
+    scoreVal.textContent = s; completionVal.textContent = c; regulariteVal.textContent = r;
+    const ipe = Math.round(s*0.5 + c*0.3 + r*0.2);
+    scoreNum.textContent = ipe;
+    palier.textContent = paliers(ipe);
+    const offset = circumference - (ipe/100)*circumference;
+    gaugeFill.style.strokeDasharray = circumference;
+    gaugeFill.style.strokeDashoffset = offset;
+  }
+  [score, completion, regularite].forEach(el => el.addEventListener('input', update));
+  update();
+})();
+</script>
+
+<!-- PREUVE / TRACTION -->
+<section class="why" id="preuve" style="background:#f7f5ef;">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:680px;margin:0 auto 32px;">
+      <span class="sec-eyebrow">Ce que la méthode a déjà produit</span>
+      <h2 class="sec-title">Une première campagne, des résultats concrets.</h2>
+      <p class="sec-sub">Notre unique campagne test à ce jour sur les fascicules DÉMASQUER, menée sur Chariow avant d'être suspendue pour préparer la suite.</p>
+    </div>
+    <div class="why-grid" style="grid-template-columns:repeat(2,1fr);max-width:600px;margin:0 auto;">
+      <div class="why-card reveal">
+        <div class="why-icon">📈</div>
+        <h3>9 % de taux de conversion</h3>
+        <p>Sur la campagne test Chariow des fascicules DÉMASQUER.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📚</div>
+        <h3>70+ fascicules vendus</h3>
+        <p>En seulement 10 jours de campagne, sans relance ni budget publicitaire soutenu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 ESPACES -->
+<section class="publics" id="publics">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Conçu pour chacun</span>
+      <h2 class="sec-title">Un espace dédié,<br>quel que soit ton rôle.</h2>
+      <p class="sec-sub">EDGC237 et DSSC s'adressent à l'écosystème entier de la réussite scolaire.</p>
+    </div>
+    <div class="pub-grid">
+      <div class="pub-card reveal">
+        <div class="pub-card-header eleve">
+          <span class="pub-emoji">🎒</span>
+          <h3>Espace Élève</h3>
+          <p>De la 6ème en Terminale — un parcours structuré autour de ton prochain examen.</p>
+        </div>
+        <div class="pub-card-body">
+          <ul class="pub-feats">
+            <li>Fiches de cours hebdomadaires</li>
+            <li>Exercices types + corrigés</li>
+            <li>Fascicules DÉMASQUER</li>
+            <li>Club Réussite par niveau</li>
+            <li>Orientation post-examen</li>
+          </ul>
+        </div>
+        <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y" target="_blank" class="pub-cta">Rejoindre gratuitement →</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-card-header parent">
+          <span class="pub-emoji">👨‍👩‍👧</span>
+          <h3>Espace Parent</h3>
+          <p>Suivez la progression de votre enfant et accédez aux ressources adaptées à son niveau.</p>
+        </div>
+        <div class="pub-card-body">
+          <ul class="pub-feats">
+            <li>Contenu accessible sur WhatsApp</li>
+            <li>Inscription au Club Réussite</li>
+            <li>Fascicules à offrir à l'élève</li>
+            <li>Contact direct avec l'enseignant</li>
+            <li>Orientation et conseils filière</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/237675444463?text=Je%20suis%20parent%20et%20je%20veux%20inscrire%20mon%20enfant%20à%20DSSC" target="_blank" class="pub-cta">Nous contacter →</a>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-card-header enseignant">
+          <span class="pub-emoji">👨‍🏫</span>
+          <h3>Espace Enseignant</h3>
+          <p>Fiches de leçons, planches documentaires et ressources clés en main pour votre classe.</p>
+        </div>
+        <div class="pub-card-body">
+          <ul class="pub-feats">
+            <li>Fiches de leçons MINESEC prêtes</li>
+            <li>Planches documentaires A3</li>
+            <li>Modèles d'évaluations + corrigés</li>
+            <li>Séquences et progressions annuelles</li>
+            <li>Formation & certification pédagogique</li>
+          </ul>
+        </div>
+        <a href="https://whatsapp.com/channel/0029Vb80cGT0G0Xpzm06Ai2m" target="_blank" class="pub-cta">Rejoindre le canal PRO →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DSSC PROMO BAND -->
+<div class="dssc-band">
+  <div class="dssc-band-inner">
+    <div class="dssc-band-text">
+      <div class="eyebrow">Produit phare EDGC237 — Disponible dès août 2026</div>
+      <h2>DSSC — Digital Secondary School of Cameroon</h2>
+      <p>Clubs Réussite · Prépas Examens · Bibliothèque · Classe Virtuelle · Orientation · Communauté. L'écosystème complet.</p>
+    </div>
+    <img src="dssc-logo.png" alt="DSSC">
+    <a href="/dssc" class="dssc-band-cta">Découvrir DSSC →</a>
+  </div>
+</div>
+
+<!-- TÉMOIGNAGES -->
+<section class="temoignages" id="temoignages">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;">
+      <span class="sec-eyebrow">Ils ont fait confiance à EDGC237</span>
+      <h2 class="sec-title">Ce qu'ils en disent.</h2>
+    </div>
+    <div class="temo-grid">
+      <div class="temo-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Les fiches EDGC237 m'ont permis de comprendre exactement ce que le correcteur attendait. J'ai eu mon BEPC avec mention. »</blockquote>
+        <div class="temo-author">
+          <div class="temo-avatar">🎒</div>
+          <div><div class="temo-name">Marie-Claire N.</div><div class="temo-role">Élève 3ème — BEPC obtenu</div></div>
+        </div>
+      </div>
+      <div class="temo-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« En tant qu'enseignante, les planches documentaires m'ont économisé des heures de préparation. La qualité est au niveau des meilleurs manuels. »</blockquote>
+        <div class="temo-author">
+          <div class="temo-avatar">👩‍🏫</div>
+          <div><div class="temo-name">Prof. Elodie D.</div><div class="temo-role">Enseignante Histoire-Géo</div></div>
+        </div>
+      </div>
+      <div class="temo-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>« Mon fils utilisait EDGC237 chaque semaine. Il a décroché son Probatoire du premier coup. Le Club Réussite a tout changé. »</blockquote>
+        <div class="temo-author">
+          <div class="temo-avatar">👨‍👩‍👦</div>
+          <div><div class="temo-name">Parent d'élève</div><div class="temo-role">Probatoire — Première A</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <span class="sec-eyebrow">FAQ</span>
+      <h2 class="sec-title">Les questions qu'on nous pose le plus.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">C'est quoi exactement EDGC237 ?</button>
+        <div class="faq-a"><p>EDGC237 (École Digitale de Géographie du Cameroun) est une plateforme pédagogique créée par le Dr. Sylvin WANDJA NZOUATCHAM, enseignant-chercheur. Elle propose des fiches, fascicules et contenus de révision alignés sur le programme MINESEC, pour tous les niveaux du secondaire (de la 6ème en Terminale) en Géographie, Histoire, ECM, Français, Anglais et Philosophie.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Comment accéder aux contenus ?</button>
+        <div class="faq-a"><p>L'accès principal se fait via WhatsApp : rejoins la chaîne correspondant à ton niveau et reçois 3 contenus par semaine directement sur ton téléphone. Les fascicules DÉMASQUER sont disponibles en PDF via téléchargement automatique sur Chariow ou commande via WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Qu'est-ce que DSSC ?</button>
+        <div class="faq-a"><p>DSSC (Digital Secondary School of Cameroon) est le produit phare d'EDGC237. C'est la plateforme commerciale complète qui rassemble : Clubs Réussite par niveau, Prépas Examens, Bibliothèque Numérique, Classe Virtuelle, Orientation et Communauté. DSSC est accessible depuis ce site à la rubrique DSSC.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Quels sont les tarifs ?</button>
+        <div class="faq-a"><p>Les chaînes WhatsApp sont gratuites. Les fascicules DÉMASQUER sont à 1 200 FCFA l'unité, les packs niveau à 3 500 FCFA. Les Clubs Réussite vont de 7 500 FCFA (3ème) à 12 000 FCFA (Terminale) par an. Paiement via MTN MoMo (+237 675 444 463) ou Orange Money (+237 693 132 834).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Les contenus sont-ils vraiment alignés sur le MINESEC ?</button>
+        <div class="faq-a"><p>Oui, sans exception. Chaque ressource s'appuie sur les programmes et arrêtés officiels MINESEC. L'auteur est lui-même enseignant du secondaire et connaît les exigences des correcteurs d'examens nationaux.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="reveal">Ton <em>succès</em> commence<br>par une décision.</h2>
+    <p class="reveal">Rejoins les élèves camerounais qui révisent déjà avec méthode — gratuitement, dès aujourd'hui.</p>
+    <div class="cta-btns reveal">
+      <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=edgc237site&utm_medium=cta_final&utm_campaign=organic" target="_blank" class="btn-primary">📲 Commencer gratuitement</a>
+      <a href="/dssc" class="btn-secondary">🎓 Découvrir DSSC →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.jpg" alt="EDGC237">
+      <div class="footer-brand-name">EDGC237</div>
+      <p>École Digitale de Géographie du Cameroun. Contenus pédagogiques premium alignés sur le programme officiel MINESEC. Produit phare : DSSC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#pourquoi">Pourquoi EDGC237</a>
+      <a href="#methode">La Méthode</a>
+      <a href="#publics">Espace élève</a>
+      <a href="/dssc">🎓 DSSC</a>
+      <a href="/universite">🎓 Université</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact & Canaux</h4>
+      <a href="tel:+237675444463">MTN MoMo · +237 675 444 463</a>
+      <a href="tel:+237693132834">Orange · +237 693 132 834</a>
+      <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y" target="_blank">📣 Chaîne principale</a>
+      <a href="https://whatsapp.com/channel/0029Vb77v0xKgsNmVZkI9u1o" target="_blank">📗 Élèves 3ème</a>
+      <a href="https://whatsapp.com/channel/0029VbC4EtZ6mYPOhsvUO91a" target="_blank">📘 Élèves 1ère</a>
+      <a href="https://whatsapp.com/channel/0029VbCFHSJ0QeaiQLUvkk3r" target="_blank">📙 Élèves Terminale</a>
+      <a href="https://whatsapp.com/channel/0029Vb80cGT0G0Xpzm06Ai2m" target="_blank">👨‍🏫 Enseignants</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EDGC237 — École Digitale de Géographie du Cameroun. Tous droits réservés.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="/cgu">CGU</a>
+      <a href="/confidentialite">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ
+function toggleFaq(el){
+  const ans=el.nextElementSibling;
+  const isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(q=>q.classList.remove('open'));
+  if(!isOpen){ans.classList.add('open');el.classList.add('open');}
+}
+
+// MENU MOBILE
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobile-menu');
+  if(h&&m&&!h.contains(e.target)&&!m.contains(e.target)){
+    h.classList.remove('open');m.classList.remove('open');
+  }
+});
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

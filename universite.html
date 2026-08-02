@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDGC237 Université — Licence, Master & Accompagnement Recherche en Géographie</title>
+<meta name="description" content="EDGC237 Université accompagne les étudiants en Licence et Master de Géographie, ainsi que les chercheurs en mémoire ou en thèse : cours, méthodologie, encadrement de recherche.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://edgc237.vercel.app/universite">
+<meta property="og:title" content="EDGC237 Université">
+<meta property="og:description" content="Licence, Master & accompagnement recherche en Géographie — par EDGC237.">
+<meta property="og:url" content="https://edgc237.vercel.app/universite">
+<meta property="og:image" content="https://edgc237.vercel.app/og-image.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BWRWQ6PNS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9BWRWQ6PNS');</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0D1B2A;overflow-x:hidden;}
+:root{--green:#0A5C0A;--green-dark:#073d07;--red:#CE1126;--gold:#F9C300;--gold-dark:#c9a000;--navy:#0D1B2A;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{position:sticky;top:0;width:100%;z-index:998;background:var(--navy);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 24px rgba(0,0,0,0.3);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo .edgc{color:rgba(255,255,255,0.5);font-size:0.75rem;font-weight:600;border-right:1px solid rgba(255,255,255,0.15);padding-right:12px;margin-right:4px;}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.75);font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);padding:9px 20px;border-radius:4px;font-weight:700;font-size:0.82rem;text-transform:uppercase;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--navy);padding:16px 0;z-index:997;box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:13px 24px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);transition:background .2s;}
+.mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--gold);}
+.mob-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;margin:12px 24px 4px;border-radius:4px;display:block;text-align:center;}
+@media(max-width:900px){.hamburger{display:flex;}.nav-links,.nav-cta{display:none;}}
+
+/* BREADCRUMB */
+.breadcrumb{background:#f0f7f0;padding:10px 32px;font-size:0.8rem;border-bottom:1px solid rgba(10,92,10,0.12);}
+.breadcrumb a{color:var(--green);font-weight:600;}
+.breadcrumb .sep{color:rgba(0,0,0,0.3);margin:0 6px;}
+.breadcrumb .here{color:var(--navy);font-weight:700;}
+
+/* HERO */
+.univ-hero{background:linear-gradient(150deg,#071a07 0%,#0a2a0a 40%,#0D1B2A 100%);padding:64px 32px 56px;position:relative;overflow:hidden;}
+.univ-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 55px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 1px,transparent 55px);}
+.univ-hero-inner{max-width:1140px;margin:0 auto;position:relative;z-index:1;max-width:680px;}
+.univ-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(249,195,0,0.1);border:1px solid rgba(249,195,0,0.25);border-radius:100px;padding:6px 16px;font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
+.univ-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;}
+.univ-hero h1 .gold{color:var(--gold);}
+.univ-hero p{color:rgba(255,255,255,0.72);font-size:0.98rem;line-height:1.75;margin-bottom:28px;}
+.univ-hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 26px;border-radius:5px;font-weight:800;font-size:0.9rem;transition:all .2s;}
+.btn-gold:hover{background:#e6b200;transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.3);color:#fff;padding:14px 26px;border-radius:5px;font-weight:600;font-size:0.9rem;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* DEUX PARCOURS */
+.parcours{padding:72px 32px;}
+.sec-label{display:inline-block;background:rgba(10,92,10,0.07);border:1px solid rgba(10,92,10,0.18);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--navy);margin-bottom:8px;}
+.sec-sub{color:rgba(13,27,42,0.55);font-size:0.95rem;margin-bottom:40px;max-width:600px;}
+.parcours-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:800px){.parcours-grid{grid-template-columns:1fr;}}
+.parcours-card{background:#fff;border:1px solid rgba(13,27,42,0.09);border-radius:14px;padding:32px;transition:all .2s;}
+.parcours-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.09);}
+.parcours-icon{font-size:2.2rem;margin-bottom:14px;}
+.parcours-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:10px;}
+.parcours-card p{color:rgba(13,27,42,0.6);font-size:0.9rem;line-height:1.7;margin-bottom:18px;}
+.parcours-list{list-style:none;margin-bottom:20px;}
+.parcours-list li{color:rgba(13,27,42,0.75);font-size:0.87rem;padding:6px 0;padding-left:22px;position:relative;}
+.parcours-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800;}
+.parcours-cta{display:inline-block;font-size:0.85rem;font-weight:700;color:var(--green);border-bottom:1px solid rgba(10,92,10,0.2);}
+
+/* ENCADREMENT / CREDIBILITE */
+.encadrement{padding:72px 32px;background:#f0f7f0;}
+.enc-grid{display:flex;gap:36px;align-items:center;flex-wrap:wrap;}
+.enc-text{flex:1;min-width:300px;}
+.enc-text p{color:rgba(13,27,42,0.65);font-size:0.93rem;line-height:1.75;margin-bottom:14px;}
+.enc-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.enc-badge{background:#fff;border:1px solid rgba(10,92,10,0.15);color:var(--green);font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:999px;}
+
+/* TARIFS */
+.tarifs{padding:72px 32px;}
+.tarifs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){.tarifs-grid{grid-template-columns:1fr;}}
+.tarif-card{border:1px solid rgba(13,27,42,0.1);border-radius:12px;padding:28px 24px;transition:all .2s;}
+.tarif-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.1);}
+.tarif-card.featured{border:2px solid var(--gold);}
+.tarif-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px;}
+.tarif-price{font-size:1.5rem;font-weight:900;color:var(--navy);margin:10px 0;}
+.tarif-price span{font-size:0.75rem;font-weight:600;color:rgba(13,27,42,0.5);}
+.tarif-note{background:rgba(249,195,0,0.1);border:1px solid rgba(249,195,0,0.3);border-radius:10px;padding:16px 20px;margin-top:24px;font-size:0.85rem;color:rgba(13,27,42,0.7);}
+
+/* FAQ */
+.faq{padding:72px 32px;background:#f8f9fa;}
+.faq-item{border-bottom:1px solid rgba(13,27,42,0.1);padding:18px 0;}
+.faq-item h3{font-size:0.95rem;font-weight:700;margin-bottom:8px;}
+.faq-item p{color:rgba(13,27,42,0.6);font-size:0.87rem;line-height:1.7;}
+
+/* CTA FINAL */
+.cta-final{padding:72px 32px;background:var(--navy);text-align:center;}
+.cta-final h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.4rem,3vw,2rem);margin-bottom:14px;}
+.cta-final p{color:rgba(255,255,255,0.6);margin-bottom:24px;}
+
+/* FOOTER */
+footer{background:var(--green-dark,#073d07);border-top:4px solid var(--gold);padding:40px 32px;}
+.foot-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.foot-brand p{color:rgba(255,255,255,0.45);font-size:0.8rem;line-height:1.7;max-width:280px;}
+.foot-col h4{color:var(--gold);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.foot-col a{display:block;color:rgba(255,255,255,0.55);font-size:0.84rem;margin-bottom:8px;transition:color .2s;}
+.foot-col a:hover{color:var(--gold);}
+.foot-bottom{max-width:1140px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;color:rgba(255,255,255,0.3);font-size:0.75rem;flex-wrap:wrap;gap:8px;}
+.foot-bottom a{color:rgba(255,255,255,0.35);}
+.foot-bottom a:hover{color:var(--gold);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;box-shadow:0 4px 20px rgba(37,211,102,0.45);transition:all .25s;}
+.wa-float:hover{transform:translateY(-3px);}
+.wa-float svg{width:20px;height:20px;fill:#fff;}
+@media(max-width:700px){.wa-float span{display:none;}.wa-float{padding:13px;border-radius:50%;}}
+
+/* DIVIDER */
+.divider{height:4px;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=universite&utm_medium=cta&utm_campaign=rejoindre" target="_blank" class="wa-float" aria-label="WhatsApp EDGC237">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Rejoindre</span>
+</a>
+
+<nav>
+  <div class="nav-logo">
+    <span class="edgc" style="color:#fff;font-weight:800;">EDGC237</span>
+    <span style="color:var(--gold);font-weight:700;font-size:0.85rem;">🎓 Université</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/">Accueil EDGC237</a></li>
+    <li><a href="/dssc">DSSC (Secondaire)</a></li>
+    <li><a href="#licence-master" class="active">Licence & Master</a></li>
+    <li><a href="#recherche">Mémoire & Thèse</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+  </ul>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=universite&utm_medium=cta" target="_blank" class="nav-cta">📲 Nous écrire</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/">🏠 Accueil EDGC237</a>
+  <a href="/dssc">🎒 DSSC (Secondaire)</a>
+  <a href="#licence-master">📘 Licence & Master</a>
+  <a href="#recherche">🔬 Mémoire & Thèse</a>
+  <a href="#tarifs">💳 Tarifs</a>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y" target="_blank" class="mob-cta">📲 Nous écrire</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">EDGC237</a><span class="sep">/</span><span class="here">🎓 Université</span>
+</div>
+
+<!-- HERO -->
+<section class="univ-hero">
+  <div class="univ-hero-inner">
+    <div class="univ-eyebrow">🇨🇲 Powered by EDGC237</div>
+    <h1>Passer du secondaire à l'<span class="gold">excellence universitaire</span> en Géographie.</h1>
+    <p>EDGC237 Université accompagne les étudiants en Licence et Master de Géographie, ainsi que les chercheurs en cours de mémoire ou de thèse — avec la même exigence méthodologique qui a fait la réputation d'EDGC237 au secondaire.</p>
+    <div class="univ-hero-btns">
+      <a href="#licence-master" class="btn-gold">📘 Licence & Master</a>
+      <a href="#recherche" class="btn-ghost">🔬 Mémoire & Thèse</a>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- DEUX PARCOURS -->
+<section class="parcours" id="accueil-univ">
+  <div class="wrap">
+    <span class="sec-label">Deux parcours, une même exigence</span>
+    <h2 class="sec-title">Choisissez votre parcours</h2>
+    <p class="sec-sub">Que vous soyez en cours de cursus ou en phase de recherche, EDGC237 Université structure votre progression avec la même rigueur méthodologique.</p>
+    <div class="parcours-grid">
+
+      <div class="parcours-card" id="licence-master">
+        <div class="parcours-icon">📘</div>
+        <h3>Licence & Master de Géographie</h3>
+        <p>Fiches de synthèse par Unité d'Enseignement, méthodologie de la dissertation et du commentaire de carte, préparation aux examens semestriels.</p>
+        <ul class="parcours-list">
+          <li>Fiches de cours structurées par semestre (L1 à M2)</li>
+          <li>Méthodologie de la dissertation géographique</li>
+          <li>Lecture et commentaire de cartes et documents</li>
+          <li>Corrigés types et grilles d'évaluation universitaires</li>
+        </ul>
+        <a href="#tarifs" class="parcours-cta">Voir les formules →</a>
+      </div>
+
+      <div class="parcours-card" id="recherche">
+        <div class="parcours-icon">🔬</div>
+        <h3>Accompagnement Mémoire & Thèse</h3>
+        <p>Encadrement méthodologique pour cadrer une problématique, construire un protocole de recherche, structurer un mémoire ou une thèse jusqu'à la soutenance.</p>
+        <ul class="parcours-list">
+          <li>Cadrage de la problématique et de la revue de littérature</li>
+          <li>Construction du protocole de recherche (terrain, enquêtes)</li>
+          <li>Structuration et relecture critique du manuscrit</li>
+          <li>Préparation à la soutenance</li>
+        </ul>
+        <a href="#tarifs" class="parcours-cta">Voir les formules →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENCADREMENT / CREDIBILITE -->
+<section class="encadrement" id="encadrement">
+  <div class="wrap">
+    <div class="enc-grid">
+      <div class="enc-text">
+        <span class="sec-label">Qui vous accompagne</span>
+        <h2 class="sec-title">Un encadrement mené par un chercheur, pas seulement un formateur.</h2>
+        <p>EDGC237 Université est porté par le Dr. Sylvin WANDJA NZOUATCHAM, Docteur en Géographie, enseignant-chercheur et auteur d'une monographie académique fondée sur 18 mois de terrain et 261 entretiens menés au Cameroun.</p>
+        <p>Cette double expérience — terrain de recherche et ingénierie pédagogique — permet un accompagnement qui ne se limite pas à la théorie universitaire : méthode, rigueur scientifique et exigence de rédaction académique.</p>
+        <div class="enc-badges">
+          <span class="enc-badge">🎓 Docteur en Géographie</span>
+          <span class="enc-badge">📚 18 mois de terrain</span>
+          <span class="enc-badge">🔍 261 entretiens de recherche</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="tarifs" id="tarifs">
+  <div class="wrap">
+    <span class="sec-label">Formules</span>
+    <h2 class="sec-title">Des formules adaptées à votre étape</h2>
+    <p class="sec-sub">Tarifs indicatifs — à confirmer selon votre niveau et la nature exacte de l'accompagnement.</p>
+    <div class="tarifs-grid">
+      <div class="tarif-card">
+        <h3>📘 Pack Licence</h3>
+        <div class="tarif-price">À définir <span>/ semestre</span></div>
+        <p style="font-size:0.85rem;color:rgba(13,27,42,0.6);">Fiches de synthèse + méthodologie de la dissertation, pour une UE ou un semestre complet.</p>
+      </div>
+      <div class="tarif-card featured">
+        <h3>🔬 Accompagnement Mémoire</h3>
+        <div class="tarif-price">À définir <span>/ forfait</span></div>
+        <p style="font-size:0.85rem;color:rgba(13,27,42,0.6);">Cadrage, suivi de rédaction et relecture jusqu'au dépôt du mémoire.</p>
+      </div>
+      <div class="tarif-card">
+        <h3>🎓 Accompagnement Thèse</h3>
+        <div class="tarif-price">Sur devis</div>
+        <p style="font-size:0.85rem;color:rgba(13,27,42,0.6);">Suivi personnalisé sur mesure, adapté à la durée et à la nature du projet doctoral.</p>
+      </div>
+    </div>
+    <div class="tarif-note">
+      💬 Les tarifs précis seront communiqués après un premier échange sur votre niveau, votre sujet et vos besoins. Contactez-nous via WhatsApp ou téléphone pour un devis personnalisé.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:800px;">
+    <span class="sec-label">Questions fréquentes</span>
+    <h2 class="sec-title" style="margin-bottom:30px;">Vous vous posez peut-être ces questions</h2>
+    <div class="faq-item">
+      <h3>EDGC237 Université s'adresse-t-il uniquement aux étudiants en Géographie ?</h3>
+      <p>L'offre est aujourd'hui centrée sur la Géographie (Licence et Master), domaine d'expertise du fondateur. L'accompagnement méthodologique en recherche (mémoire, thèse) peut s'adapter à des problématiques connexes en sciences humaines et sociales — à discuter au cas par cas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Comment se déroule l'accompagnement mémoire ou thèse ?</h3>
+      <p>Après un premier échange pour cerner votre sujet, votre niveau d'avancement et vos besoins, un plan de suivi personnalisé est proposé — séances de cadrage, relecture de sections, préparation à la soutenance.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Comment payer et vous contacter ?</h3>
+      <p>Via MTN MoMo (+237 675 444 463) ou Orange Money (+237 693 132 834), après confirmation du devis. Pour toute question, écrivez-nous directement sur WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>Prêt à structurer votre progression universitaire ?</h2>
+  <p>Un premier échange suffit pour cerner vos besoins et vous proposer la bonne formule.</p>
+  <a href="https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y?utm_source=universite&utm_medium=cta_final" target="_blank" class="btn-gold">📲 Nous écrire sur WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <p>EDGC237 Université — accompagnement Licence, Master et recherche (mémoire, thèse) en Géographie, porté par EDGC237 (École Digitale de Géographie du Cameroun).</p>
+    </div>
+    <div class="foot-col">
+      <h4>Université</h4>
+      <a href="#licence-master">Licence & Master</a>
+      <a href="#recherche">Mémoire & Thèse</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact & Paiement</h4>
+      <a href="tel:+237675444463">MTN MoMo · +237 675 444 463</a>
+      <a href="tel:+237693132834">Orange Money · +237 693 132 834</a>
+      <a href="/">← Retour à l'accueil</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 EDGC237 Université — Powered by EDGC237 (École Digitale de Géographie du Cameroun). Tous droits réservés.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="/cgu">CGU</a>
+      <a href="/confidentialite">Confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobile-menu');
+  if(h&&m&&!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}
+});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
+document.querySelectorAll('.parcours-card,.tarif-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity 0.45s ease,transform 0.45s ease';obs.observe(el);});
+</script>
+</body>
+</html>
