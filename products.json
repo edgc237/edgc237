@@ -1,0 +1,264 @@
+{
+ "site": "https://edgc237.vercel.app",
+ "chariow": "https://ytzldboj.mychariow.shop/prd_",
+ "shop": "https://ytzldboj.mychariow.com",
+ "channels": {
+  "principale": "https://whatsapp.com/channel/0029VaEvAam96H4SaBoBFO1Y",
+  "enseignants": "https://whatsapp.com/channel/0029Vb80cGT0G0Xpzm06Ai2m"
+ },
+ "products": {
+  "combo": {
+   "tag": "Meilleure offre · 15 000 FCFA au lieu de 21 000",
+   "name": "Pack Combo, tous niveaux",
+   "inc": "Six kits niveau de la 6ème en Terminale, en Géographie, Histoire et ECM. Précise ta classe à la commande. Fascicules DÉMASQUER non inclus.",
+   "price": 15000,
+   "buy": "wa:Je veux commander le Pack Combo Tous Niveaux EDGC237. Ma classe :",
+   "label": "Commander",
+   "star": true,
+   "apercu": ""
+  },
+  "kit-6eme": {
+   "tag": "6ème",
+   "name": "Kit 6ème",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:wb4z1g",
+   "cls": "",
+   "apercu": ""
+  },
+  "kit-5eme": {
+   "tag": "5ème",
+   "name": "Kit 5ème",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:sbr3d6",
+   "cls": "",
+   "apercu": ""
+  },
+  "kit-2nde": {
+   "tag": "2nde",
+   "name": "Kit 2nde",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:ey7uy6",
+   "cls": "",
+   "apercu": ""
+  },
+  "kit-3eme": {
+   "tag": "3ème · BEPC",
+   "name": "Kit 3ème",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:m2tzmz",
+   "cls": "bepc",
+   "apercu": ""
+  },
+  "kit-1ere": {
+   "tag": "1ère · Probatoire",
+   "name": "Kit 1ère",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:iplyqr",
+   "cls": "prob",
+   "apercu": ""
+  },
+  "kit-terminale": {
+   "tag": "Terminale · BAC",
+   "name": "Kit Terminale",
+   "inc": "Géographie, Histoire et ECM complètes, avec exercices types d’examen.",
+   "price": 3500,
+   "buy": "chariow:gnz00l",
+   "cls": "bac",
+   "apercu": ""
+  },
+  "demasquer-bepc-geographie": {
+   "tag": "BEPC · 3ème",
+   "name": "DÉMASQUER Géographie",
+   "price": 1200,
+   "buy": "chariow:zvsmgk",
+   "cls": "bepc",
+   "apercu": ""
+  },
+  "demasquer-bepc-histoire": {
+   "tag": "BEPC · 3ème",
+   "name": "DÉMASQUER Histoire",
+   "price": 1200,
+   "buy": "chariow:vsxext",
+   "cls": "bepc",
+   "apercu": ""
+  },
+  "demasquer-bepc-ecm": {
+   "tag": "BEPC · 3ème",
+   "name": "DÉMASQUER ECM",
+   "price": 1200,
+   "buy": "chariow:h81tnl",
+   "cls": "bepc",
+   "apercu": ""
+  },
+  "demasquer-probatoire-histoire": {
+   "tag": "Probatoire · 1ère",
+   "name": "DÉMASQUER Histoire",
+   "price": 1200,
+   "buy": "chariow:aubbgt",
+   "cls": "prob",
+   "apercu": ""
+  },
+  "demasquer-probatoire-ecm": {
+   "tag": "Probatoire · 1ère",
+   "name": "DÉMASQUER ECM",
+   "price": 1200,
+   "buy": "chariow:hzxwlo",
+   "cls": "prob",
+   "apercu": ""
+  },
+  "demasquer-bac-histoire": {
+   "tag": "BAC · Terminale",
+   "name": "DÉMASQUER Histoire",
+   "price": 1200,
+   "buy": "chariow:7sdmhh",
+   "cls": "bac",
+   "apercu": ""
+  },
+  "demasquer-bac-ecm": {
+   "tag": "BAC · Terminale",
+   "name": "DÉMASQUER ECM",
+   "price": 1200,
+   "buy": "chariow:l2f6z0",
+   "cls": "bac",
+   "apercu": ""
+  },
+  "reseau-pro": {
+   "tag": "Abonnement annuel",
+   "name": "Réseau Pro enseignants",
+   "inc": "446 fiches pédagogiques (plus de 1 000 pages) en Histoire, Géographie et ECM, toutes les épreuves avec corrigés à chaque séquence, formation IA et digitalisation.",
+   "price": 10000,
+   "unit": "FCFA par an",
+   "buy": "wa:JE VEUX le Réseau Pro enseignants EDGC237",
+   "label": "Rejoindre",
+   "star": true,
+   "apercu": ""
+  },
+  "pack-matiere": {
+   "tag": "Une matière, un niveau",
+   "name": "Pack Matière",
+   "inc": "Les ressources de la matière et de la classe que vous enseignez. Précisez-les au moment de la commande.",
+   "price": 3500,
+   "buy": "wa:JE VEUX un Pack Matière EDGC237. Matière et classe :",
+   "label": "Commander",
+   "apercu": ""
+  },
+  "licence-repetiteur": {
+   "tag": "Pour répétiteurs",
+   "name": "Licence Répétiteur",
+   "inc": "Accès mensuel pour vos cours de répétition.",
+   "price": 3000,
+   "unit": "FCFA par mois",
+   "buy": "wa:JE VEUX la Licence Répétiteur EDGC237",
+   "label": "Commander",
+   "apercu": ""
+  },
+  "demasquer-enseignants": {
+   "tag": "BEPC, Probatoire, BAC",
+   "name": "Fascicules DÉMASQUER",
+   "inc": "Sept fascicules d’examen avec corrigés détaillés, à 1 200 FCFA chacun.",
+   "price": 1200,
+   "buy": "link:/eleves#demasquer",
+   "label": "Voir les fascicules",
+   "apercu": ""
+  },
+  "planches-a3": {
+   "tag": "Pour la classe",
+   "name": "Planches documentaires A3",
+   "inc": "Format A3 paysage prêt à imprimer, structure MINESEC de 120 minutes, Géographie, Histoire et ECM, de la 6ème à la 3ème.",
+   "price_text": "Sur devis",
+   "unit": "",
+   "buy": "wa:Je veux un devis pour les Planches A3 EDGC237",
+   "label": "Demander un devis",
+   "apercu": ""
+  },
+  "pack-etablissement": {
+   "tag": "Lycées, collèges, centres de formation",
+   "name": "Licence multi-utilisateurs",
+   "inc": "Toutes les ressources EDGC237, pour toutes les classes et toutes les matières. Le tarif dépend de la taille de l’établissement et de vos besoins.",
+   "price_text": "25 000 à 50 000",
+   "buy": "wa:Je veux un devis Pack Etablissement EDGC237",
+   "label": "Demander un devis",
+   "star": true,
+   "apercu": ""
+  }
+ },
+ "groups": {
+  "eleves": [
+   [
+    "Pack complet",
+    "",
+    [
+     "combo"
+    ]
+   ],
+   [
+    "Kits par classe",
+    "Un kit par niveau, à 3 500 FCFA.",
+    [
+     "kit-6eme",
+     "kit-5eme",
+     "kit-2nde",
+     "kit-3eme",
+     "kit-1ere",
+     "kit-terminale"
+    ],
+    "kits"
+   ],
+   [
+    "Fascicules DÉMASQUER",
+    "Préparation intensive aux examens officiels : structure A.1 / A.2 / Partie B, situations-problèmes, corrigés détaillés et 2 simulations complètes.",
+    [
+     "demasquer-bepc-geographie",
+     "demasquer-bepc-histoire",
+     "demasquer-bepc-ecm",
+     "demasquer-probatoire-histoire",
+     "demasquer-probatoire-ecm",
+     "demasquer-bac-histoire",
+     "demasquer-bac-ecm"
+    ],
+    "demasquer"
+   ]
+  ],
+  "enseignants": [
+   [
+    "Réseau Pro",
+    "",
+    [
+     "reseau-pro"
+    ]
+   ],
+   [
+    "À la carte",
+    "",
+    [
+     "pack-matiere",
+     "licence-repetiteur",
+     "demasquer-enseignants",
+     "planches-a3"
+    ]
+   ]
+  ],
+  "etablissements": [
+   [
+    "Pack Établissement",
+    "",
+    [
+     "pack-etablissement"
+    ]
+   ],
+   [
+    "Sur mesure",
+    "",
+    [
+     "planches-a3"
+    ]
+   ]
+  ]
+ },
+ "home_offer": "combo"
+}

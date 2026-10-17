@@ -1,0 +1,61 @@
+{
+ "cleanUrls": true,
+ "trailingSlash": false,
+ "redirects": [
+  {
+   "source": "/catalogue",
+   "destination": "/eleves",
+   "permanent": false
+  },
+  {
+   "source": "/vip",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/universite",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/dssc",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/evaluation",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/admin",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/apropos",
+   "destination": "/",
+   "permanent": false
+  }
+ ],
+ "headers": [
+  {
+   "source": "/logo.jpg",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=31536000, immutable"
+    }
+   ]
+  },
+  {
+   "source": "/fonts/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=31536000, immutable"
+    }
+   ]
+  }
+ ]
+}
